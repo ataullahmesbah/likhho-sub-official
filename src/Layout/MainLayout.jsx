@@ -9,6 +9,7 @@ const MainLayout = () => {
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
+            <p>This is a demo pull request</p>
         </div>
     );
 };
