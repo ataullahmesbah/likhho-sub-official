@@ -28,6 +28,7 @@ const Drag = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 display: 'flex',
+                listType:'picture',
                 height: '100vh'
             }}
         >
