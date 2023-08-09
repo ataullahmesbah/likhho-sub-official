@@ -20,7 +20,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 export default function App() {
     return (
         <>
-        <h2 className='text-3xl font-serif underline underline-offset-8	  '>Our Contributor</h2>
+        <h2 className='text-3xl font-serif  text-center	 '>Our Contributor</h2>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
@@ -59,6 +59,7 @@ export default function App() {
                                 <h3 className="content-title">Chayon Adhikary</h3>
                                 <p className="content-text">MERN Stack Developer</p>
                                 <button className="btn hover:outline-white btn-info text-white my-2 ">Details</button>
+                                <p>this is demo</p>
                             </div>
                         </div>
                     </div>
