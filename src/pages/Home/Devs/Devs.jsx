@@ -59,6 +59,7 @@ export default function App() {
                                 <h3 className="content-title">Chayon Adhikary</h3>
                                 <p className="content-text">MERN Stack Developer</p>
                                 <button className="btn hover:outline-white btn-info text-white my-2 ">Details</button>
+                                <p>this is demo</p>
                             </div>
                         </div>
                     </div>
