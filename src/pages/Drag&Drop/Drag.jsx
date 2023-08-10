@@ -31,13 +31,13 @@ const Drag = () => {
                     alignItems: 'center',
                     display: 'flex',
                     listType: 'picture',
-                    height: '78vh'
+                    height: '68vh'
                 }}
                 className=''
             >
 
                 <Upload.Dragger
-                    action='http://localhost:5173/' style={{ width: '500px' }}
+                    action='http://localhost:5173/' style={{ width: '380px' }}
                     listType="picture"
                     accept='.jpg, .jpeg, .doc'
                     beforeUpload={(file)=>{
