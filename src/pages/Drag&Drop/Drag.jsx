@@ -31,7 +31,7 @@ const Drag = () => {
                     alignItems: 'center',
                     display: 'flex',
                     listType: 'picture',
-                    height: '100vh'
+                    height: '78vh'
                 }}
                 className=''
             >
