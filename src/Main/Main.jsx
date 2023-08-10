@@ -1,5 +1,5 @@
+import Drag from "../pages/Drag&Drop/Drag";
 import Devs from "../pages/Home/Devs/Devs";
-import Drag from "../pages/Home/Drag";
 import EditSection from "../pages/Home/EditSection/EditSection";
 import FAQ from "../pages/Home/FAQ/FAQ";
 import Review from "../pages/Home/Review/Review";
