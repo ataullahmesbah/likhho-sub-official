@@ -19,7 +19,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 export default function Devs() {
     return (
-        <>
+        <div className='pb-20'>
         <h2 className='text-3xl font-serif  text-center	 '>Our Contributor</h2>
             <Swiper
                 effect={'coverflow'}
@@ -104,6 +104,6 @@ export default function Devs() {
                     </div>
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 }
