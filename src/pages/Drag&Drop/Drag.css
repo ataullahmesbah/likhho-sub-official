@@ -1,0 +1,25 @@
+
+
+.banner-container {
+    position: relative;
+    background-image: url('../../pages/images/banner/banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 68vh;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+}

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import logo from '../pages/images/logo/devs-squad.png'
 
 
 const Navbar = () => {
   return (
+
+
     <div className="navbar z-10 bg-opacity-30 bg-violet-300 font-bold ">
       <div className="navbar-start">
         <div className="dropdown">
@@ -21,16 +24,28 @@ const Navbar = () => {
 
           </ul>
         </div>
-        <h2 className="btn btn-ghost normal-case text-2xl">Likho</h2>
+
+        <div className="flex justify-evenly text-center items-center mx-auto">
+
+          <div className="flex">
+            <img className="w-10 h-10" src={logo} alt="" />
+            <h2 className="btn btn-ghost normal-case text-2xl">Likho</h2>
+          </div>
+
+          <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <li><Link><small>Home</small></Link></li>
+            <li> <Link><small>Template</small></Link></li>
+            <li><Link><small>Edit Document Online</small></Link></li>
+            <li><Link><small>About</small></Link></li>
+          </ul>
+        </div>
+        </div>
+
+
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li><Link><small>Home</small></Link></li>
-          <li> <Link><small>Template</small></Link></li>
-          <li><Link><small>Edit Document Online</small></Link></li>
-          <li><Link><small>About</small></Link></li>
-        </ul>
-      </div>
+
+
       <div className="navbar-end">
         <Link className="btn btn-xs capitalize btn-outline "><small>Get Started</small></Link>
         <div className="dropdown dropdown-end">
@@ -52,6 +67,8 @@ const Navbar = () => {
         </div>
 
       </div>
+
+     
     </div>
   );
 };
