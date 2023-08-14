@@ -42,17 +42,8 @@ const EditDocs = () => {
         <h2 className="text-center text-orange-200 font-bold text-5xl pt-8 lg:pt-28">
           Online Documents Editor
         </h2>
-        <div className="flex flex-col-reverse lg:flex-row lg:h-auto lg:mb-10 space-y-6 lg:space-y-0 lg:space-x-10 mx-auto pt-4 lg:pt-28 justify-center pb-10">
-          <div className="w-full lg:w-1/2 p-4 border-3 rounded-md bg-white overflow-y-auto">
-            <ReactQuill
-              value={editorHtml}
-              onChange={setEditorHtml}
-              modules={modules}
-              formats={formats}
-              style={{ height: '100%', maxHeight: '500px' }} // Adjust the max height as needed
-              className="lg:max-h-[700px]"
-            />
-          </div>
+        <div className="flex flex-col-reverse lg:flex-row lg:h-auto  space-y-6 lg:space-y-0 lg:space-x-10 mx-auto pt-4 lg:pt-28 justify-center pb-10">
+          
 
 
           <div className="w-full lg:w-1/2 p-4 lg:px-20 space-y-4 lg:space-y-6">
@@ -69,6 +60,18 @@ const EditDocs = () => {
               Learn More Editor
             </button>
           </div>
+
+          <div className="w-full lg:w-1/2 p-4 border-3 rounded-md bg-white overflow-y-auto">
+            <ReactQuill
+              value={editorHtml}
+              onChange={setEditorHtml}
+              modules={modules}
+              formats={formats}
+              style={{ height: '100%', maxHeight: '500px' }} // Adjust the max height as needed
+              className="lg:max-h-[700px]"
+            />
+          </div>
+          
         </div>
       </Container>
     </div>

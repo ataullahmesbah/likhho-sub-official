@@ -5,6 +5,7 @@ import EditDocs from "../pages/EditDocs/EditDocs";
 
 import FAQ from "../pages/Home/FAQ/FAQ";
 import Review from "../pages/Home/Review/Review";
+import Instruction from "../pages/Instruction/Instruction";
 import MarqueeSection from "../pages/MarqueeSection/MarqueeSection";
 import ReadSection from "../pages/ReadSection/ReadSection";
 import TemplateSection from "../pages/Template/TemplateSection";
@@ -20,15 +21,17 @@ const Main = () => {
             <TemplateSection></TemplateSection>
             <MarqueeSection></MarqueeSection>
             <ReadSection></ReadSection>
+            <Instruction></Instruction>
             <Review></Review>
             <Developer></Developer>
 
             {/* <Counter></Counter>
-            <EditSection></EditSection>
+
+            
 
            
             <FAQ></FAQ>
-            <Devs></Devs> */}
+             */}
         </div>
     );
 };

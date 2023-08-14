@@ -58,7 +58,7 @@ const Drag = () => {
             <p className="font-bold text-xl sm:text-3xl pt-5 mb-0 text-white text-center sm:text-left">
               Document simplified Likho.
             </p>
-            <button className="btn-sm rounded-lg btn-primary font-semibold">Explore Likho</button>
+            <button className=" font-bold text-xl p-2 m-3  text-white rounded-lg btn-info font-sans">Explore Likho</button>
           </div>
         </div>
 

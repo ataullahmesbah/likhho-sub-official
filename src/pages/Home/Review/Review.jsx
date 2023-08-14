@@ -12,10 +12,11 @@ const Review = () => {
         fetch('/review.json')
             .then(res => res.json())
             .then(data => {
-                //Slice the first 3 entries from the data array
-                // const slicedReviews = data.slice(0, 3);
-                // setReview(slicedReviews);
-                setReview(data);
+                // Slice the first 3 entries from the data array
+                const slicedReviews = data.slice(0, 3);
+                setReview(slicedReviews);
+                slicedReviews(data)
+                // setReview(data);
             })
     }, [])
 
