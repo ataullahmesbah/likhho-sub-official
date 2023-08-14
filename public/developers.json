@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/tJVD66R/asish.png",
+      "name": "Himalay Bala Asish",
+      "title": "Software Engineer",
+      "description": "Experienced software engineer with a passion for backend development and system architecture."
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/44YDyHy/Ataullah-Mesbah.png",
+      "name": "Ataullah Mesbah Fahim",
+      "title": "Frontend Developer",
+      "description": "Frontend developer specializing in creating intuitive and user-friendly web interfaces."
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/19SjWpg/bayezid.jpg",
+      "name": "Abdur Rahman Bayezid",
+      "title": "Full Stack Developer",
+      "description": "Full stack developer with a knack for designing responsive and dynamic web applications."
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/kS5JW2p/Chayon-adhikary.png",
+      "name": "Chayon Adhikary",
+      "title": "DevOps Engineer",
+      "description": "DevOps engineer passionate about optimizing development workflows and ensuring seamless deployments."
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/BKGjDs8/joydev.jpg",
+      "name": "Joy Shutradhar",
+      "title": "Backend Developer",
+      "description": "Backend developer specializing in crafting efficient and scalable server-side solutions."
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/YhGYXQ6/mehjabin.png",
+      "name": "Mahejabin",
+      "title": "UI/UX Designer",
+      "description": "UI/UX designer with a creative mindset, dedicated to delivering visually appealing and intuitive designs."
+    }
+  ]
+  

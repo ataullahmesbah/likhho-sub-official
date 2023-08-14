@@ -1,11 +1,14 @@
-import Counter from "../pages/Counting doc/Counter";
+
+import Developer from "../pages/Developer/Developer";
 import Drag from "../pages/Drag&Drop/Drag";
 import EditDocs from "../pages/EditDocs/EditDocs";
-import Devs from "../pages/Home/Devs/Devs";
-import EditSection from "../pages/Home/EditSection/EditSection";
+
 import FAQ from "../pages/Home/FAQ/FAQ";
 import Review from "../pages/Home/Review/Review";
-import TemplateSection from "../pages/Home/Template/TemplateSection";
+import MarqueeSection from "../pages/MarqueeSection/MarqueeSection";
+import ReadSection from "../pages/ReadSection/ReadSection";
+import TemplateSection from "../pages/Template/TemplateSection";
+
 
 
 
@@ -14,12 +17,18 @@ const Main = () => {
         <div>
             <Drag></Drag>
             <EditDocs></EditDocs>
-            <Counter></Counter>
-            <EditSection></EditSection>
             <TemplateSection></TemplateSection>
+            <MarqueeSection></MarqueeSection>
+            <ReadSection></ReadSection>
             <Review></Review>
+            <Developer></Developer>
+
+            {/* <Counter></Counter>
+            <EditSection></EditSection>
+
+           
             <FAQ></FAQ>
-            <Devs></Devs>
+            <Devs></Devs> */}
         </div>
     );
 };
