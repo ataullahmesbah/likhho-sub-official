@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-// import loginLogo from '../../assets/DevsImg/tadyLogo.png'
+import loginLogo from '../../assets/Login Image/login.png'
 import { useForm } from "react-hook-form";
 import { useContext, useState } from 'react';
 import { FaEye } from 'react-icons/fa';
@@ -45,14 +45,14 @@ const LogIn = () => {
     return (
         <div className="hero min-h-screen bg-base-200 my-10 rounded-xl">
 
-            <form onSubmit={handleSubmit(onSubmit)} className="hero-content flex-col lg:flex-row">
+            <form onSubmit={handleSubmit(onSubmit)} className="hero-content flex-col lg:flex-row gap-32">
                 <div className="text-center lg:text-left w-1/2">
 
-                    {/* <img src={loginLogo} alt="" /> */}
+                    <img className='h-[300px] w-[400px]' src={loginLogo} alt="" />
                 </div>
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h1 className="text-3xl font-bold">Login!</h1>
+                        <h1 className="text-3xl font-bold">Please Login!</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -63,7 +63,7 @@ const LogIn = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type={showPassword ? 'text' : 'password'} {...register("password", { required: true })} placeholder="password" className="input input-bordered" /><FaEye onClick={togglePassword} className='relative bottom-7 left-64'></FaEye>
+                            <input type={showPassword ? 'text' : 'password'} {...register("password", { required: true })} placeholder="password" className="input input-bordered" /><FaEye onClick={togglePassword} className='relative bottom-7 left-72'></FaEye>
 
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
