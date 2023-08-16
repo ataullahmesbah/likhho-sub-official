@@ -3,7 +3,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import loginLogo from '../../assets/Login Image/login.png'
 import { useForm } from "react-hook-form";
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import Swal from 'sweetalert2';
 import { FaEye } from 'react-icons/fa';
@@ -40,18 +40,6 @@ const SignUp = () => {
                 console.log(error.message)
             })
     }
-
-
-    // useEffect(() => {
-    //     lottie.loadAnimation({
-    //         container: container.current,
-    //         renderer: 'svg',
-    //         loop: true,
-    //         autoplay: true,
-    //         // path: ('../../assets/login.json'),
-    //         // animationData: require('../../assets/login.json')
-    //     })
-    // }, [])
 
     return (
         <div className="hero min-h-screen bg-base-200 my-10 rounded-xl">
