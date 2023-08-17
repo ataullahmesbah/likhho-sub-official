@@ -94,6 +94,8 @@ const SignUp = () => {
                             {errors.password?.type === 'maxLength' && <span className='text-red-500 mt-2'>Password must be Less than 20 characters</span>}
                             {errors.password?.type === 'pattern' && <span className='text-red-500 mt-2'>Password must be one uppercase, one special character</span>}
 
+
+
                             <div>
                                 <label className="label mb-3">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
