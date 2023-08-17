@@ -1,12 +1,11 @@
-
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 
 const MarqueeSection = () => {
     return (
-        <div className='mt-20'>
-            <p className='text-center text-4xl text-blue-950 font-bold'>Locate Your File</p>
+        <div className=' bg-orange-50 pb-20'>
+            <p className='text-center text-4xl text-blue-950 font-bold pt-20'>Locate Your File</p>
             <Marquee speed={100}  className='mt-12'>
                 <div className='mx-20'>
                     <img src="https://i.ibb.co/6FRmks0/png-transparent-directory-icon-folder-miscellaneous-angle-rectangle-thumbnail.png" alt="Logo" className="h-16" />

@@ -3,8 +3,6 @@ import ReviewInfo from "../ReviewInfo/ReviewInfo";
 import Container from "../../shared/Container";
 
 
-
-
 const Review = () => {
     const [review, setReview] = useState([]);
 
