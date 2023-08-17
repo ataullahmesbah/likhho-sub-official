@@ -58,6 +58,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-end ml-4 ">
             <Link to='/login' className="btn btn-xs capitalize btn-outline m-4 font-normal bg-violet-200">Get Started</Link>
+            
             {/* if user logged in then show this div */}
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
