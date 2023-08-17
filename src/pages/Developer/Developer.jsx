@@ -50,7 +50,7 @@ const Developer = () => {
             >
 
                 {devs.map(dev => (
-                    <SwiperSlide key={dev.id} className='swiper-slide'>
+                    <SwiperSlide key={dev.id} className='swiper-slide w-full'>
 
                         <div className='swiper-msg z-10 shadow-lg mb-6 p-6'>
                             <FaQuoteLeft className='mx-auto text-3xl mb-3 text-orange-500' />
