@@ -7,16 +7,16 @@ import { AuthContext } from "../pages/Providers/AuthProvider";
 
 const Navbar = () => {
 
-  const {user,logOut}=useContext(AuthContext);
-    const handleLogOut=()=>{
-      logOut()
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
       .then()
-            .catch(error => console.log(error));
-    }
+      .catch(error => console.log(error));
+  }
   return (
     <div className="w-full bg-violet-300 ">
       <Container>
-        <div className="navbar z-10 bg-opacity-30 bg-violet-300 font-bold  w-full">
+        <div className="navbar  z-10 bg-opacity-30 bg-violet-300 font-bold  w-full">
           <div className="navbar-start">
             <div className="dropdown ">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <li><Link>Docs to pdf</Link></li>
                   </ul>
                 </li>
-                
+
                 <li><Link>About</Link></li>
 
               </ul>
@@ -61,7 +61,7 @@ const Navbar = () => {
                   </ul>
                 </details>
               </li>
-              
+
               <li><Link className=" font-normal">About</Link></li>
             </ul>
 
@@ -73,39 +73,31 @@ const Navbar = () => {
 
 
             {
-              user ? 
-              <>
-                <div className="dropdown dropdown-end">
-                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                    <img className='w-[50px] h-[50px] mx-6 rounded-[50%]' src={user.photoURL} alt="" />
-                    </div>
-                  </label>
-                  <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-violet-200 rounded-box w-52">
-                    <li>
-                      <Link className="justify-between">Profile </Link>
-                      
+              user ?
+                <>
+                  <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                      <div className="">
+                        <img className='w-[50px] h-[50px]  rounded-[50%]' src={user.photoURL} alt="" />
+                      </div>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-violet-200 rounded-box w-52">
+                      <li>
+                        <Link className="justify-between">Profile </Link>
+
                       </li>
-                    <li><Link className=" font-normal">Dashboard</Link></li>
-                    
-                    <li><Link className="font-normal">Logout</Link></li>
-                  </ul>
-                </div>
-              </>
+                      <li><Link className=" font-normal">Dashboard</Link></li>
+
+                      <li><Link className="font-normal">Logout</Link></li>
+                    </ul>
+                  </div>
+                </>
                 :
 
                 <div className="dropdown dropdown-end">
-                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className=" ">
-                      <GrUserManager className="w-[50px] h-[50px]  rounded-[50%]  " />
-                    </div>
-                  </label>
 
-                  <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-violet-200 rounded-box w-52">
-                    <li><Link to="/login" className="font-normal">LogIn</Link></li>
-                    <li><Link to="/signup" className="font-normal">SignUp</Link></li>
-                    
-                  </ul>
+                  <li><Link to="/signup" className="font-normal">SignUp</Link></li>
+
                 </div>
             }
             {/* if user not login, then show Login btn */}
