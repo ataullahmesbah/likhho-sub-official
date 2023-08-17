@@ -44,7 +44,7 @@ function a11yProps(index) {
     };
 }
 
-export default function UserDashboard() {
+export default function AdminDashboard() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
