@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginLogo from '../../assets/Login Image/login.png'
 import { useForm } from "react-hook-form";
 import { useContext, useState } from 'react';
@@ -14,9 +14,9 @@ const LogIn = () => {
     const [showPassword, setShowPassword] = useState(false)
     const { signinUser } = useContext(AuthContext)
     const navigate = useNavigate()
-    // const location = useLocation()
+    const location = useLocation()
 
-    // const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/'
 
     const togglePassword = () => {
         setShowPassword(!showPassword)
@@ -34,7 +34,7 @@ const LogIn = () => {
                     title: 'Login Successfull',
                     text: 'Welcome to Likho',
                 })
-                navigate('/')
+                navigate(from, {replace: true})
 
             })
             .catch(error => {

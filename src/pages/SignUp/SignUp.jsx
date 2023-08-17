@@ -17,6 +17,8 @@ const SignUp = () => {
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const from = location.state?.from?.pathname || '/'
+    
     const togglePassword = () => {
         setShowPassword(!showPassword)
     }
@@ -34,7 +36,7 @@ const SignUp = () => {
                     title: 'Signup Successfull',
                     text: 'Welcome to Likho',
                 })
-                navigate('/')
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 console.log(error.message)
