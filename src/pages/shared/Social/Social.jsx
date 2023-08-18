@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import saveUser from "../../../api/saveUser";
 
 const Social = () => {
     const { googleSignin } = useContext(AuthContext)
@@ -18,6 +19,7 @@ const Social = () => {
                     title: 'Signup Successfull',
                     text: 'Welcome to Likho',
                 })
+                saveUser(result.user)
                 navigate('/')
             })
 

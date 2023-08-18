@@ -7,6 +7,7 @@ import { FaEye } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Providers/AuthProvider';
 import Social from '../shared/Social/Social';
+import saveUser from '../../api/saveUser';
 
 
 
@@ -34,6 +35,7 @@ const LogIn = () => {
                     title: 'Login Successfull',
                     text: 'Welcome to Likho',
                 })
+                saveUser(result.user)
                 navigate(from, {replace: true})
 
             })
