@@ -25,20 +25,20 @@ import { Link } from 'react-router-dom';
 const Drags = () => {
     return (
         <div className='ml-48'>
-            <h1 className='text-center font-bold text-3xl  mb-0'>Upload here your file to edit</h1>
+            <h1 className='text-center font-bold text-3xl text-gray-400  mb-12'>Upload here your file to edit</h1>
             <div
                 style={{
                     justifyContent: 'center',
                     alignItems: 'center',
-                    display: 'flex',
+                    // display: 'flex',
                     listType: 'picture',
-                    height: '58vh'
+                    height: '28vh'
                 }}
-                className=''
+                className='flex-col '
             >
 
                 <Upload.Dragger
-                    action='http://localhost:5173/' style={{ width: '380px' }}
+                    action='http://localhost:5173/' style={{ width: '680px' }}
                     listType="picture"
                     accept='.jpg, .jpeg, .doc'
                     beforeUpload={(file) => {
@@ -72,12 +72,15 @@ const Drags = () => {
                 >
                     <Button>Drag & Drop the file</Button>
                     <br />
+                    <br />
 
                     <Button icon={<UploadOutlined />}>Click to Upload</Button>
                 </Upload.Dragger>
-            </div>
-            <div className='ml-48 '>
-                <Link to={'/editor'} className='text-3xl font-bold'>Create a new document</Link>
+                <div className='ml-40 mt-10'>
+                    <button>
+                        <Link to={'/editor'} className='text-3xl font-bold text-slate-500'>Create a new document</Link>
+                    </button>
+                </div>
             </div>
         </div>
     );
