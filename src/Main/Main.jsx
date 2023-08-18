@@ -1,4 +1,5 @@
 
+import Counter from "../pages/Counting doc/Counter";
 import Developer from "../pages/Developer/Developer";
 import Drag from "../pages/Drag&Drop/Drag";
 import EditDocs from "../pages/EditDocs/EditDocs";
@@ -25,13 +26,9 @@ const Main = () => {
             <Review></Review>
             <Developer></Developer>
 
-            {/* <Counter></Counter>
-
+            {/* <Counter></Counter> */}
+            {/* <FAQ></FAQ> */}
             
-
-           
-            <FAQ></FAQ>
-             */}
         </div>
     );
 };
