@@ -17,6 +17,8 @@ const SignUp = () => {
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const from = location.state?.from?.pathname || '/'
+    
     const togglePassword = () => {
         setShowPassword(!showPassword)
     }
@@ -29,12 +31,20 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 updateUserProfile(data.photo)
+                const savedUser = { name: data.name, email: data.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(savedUser)
+                })
                 Swal.fire({
                     icon: 'success',
                     title: 'Signup Successfull',
                     text: 'Welcome to Likho',
                 })
-                navigate('/')
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 console.log(error.message)
@@ -83,6 +93,8 @@ const SignUp = () => {
                             {errors.password?.type === 'minLength' && <span className='text-red-500 mt-2'>Password must be 6 characters</span>}
                             {errors.password?.type === 'maxLength' && <span className='text-red-500 mt-2'>Password must be Less than 20 characters</span>}
                             {errors.password?.type === 'pattern' && <span className='text-red-500 mt-2'>Password must be one uppercase, one special character</span>}
+
+
 
                             <div>
                                 <label className="label mb-3">

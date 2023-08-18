@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Container from "../pages/shared/Container";
-
 import { useContext } from "react";
 import { AuthContext } from "../pages/Providers/AuthProvider";
+
+
+
 
 
 const Navbar = () => {
@@ -85,7 +87,7 @@ const Navbar = () => {
                       
                         <Link className="justify-between">Profile </Link>
 
-                      <Link className=" font-normal">Dashboard</Link>
+                      <Link to="/dashboard" className=" font-normal">Dashboard</Link>
 
                       <button onClick={handleLogOut} className="font-normal">Logout</button>
                     </ul>
