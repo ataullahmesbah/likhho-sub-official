@@ -1,9 +1,6 @@
 import React from 'react';
 
-const Dashboard = () => {
-
-    
-
+const useUser = () => {
     return (
         <div>
             
@@ -11,4 +8,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default useUser;
