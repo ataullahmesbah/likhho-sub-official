@@ -43,7 +43,7 @@ const Navbar = () => {
               </ul>
 
             </div>
-            
+
             <Link to={'/'} className="text-3xl"><span className="bg-blue-400 p-1  rounded">L</span>ikho</Link>
 
           </div>
@@ -69,9 +69,7 @@ const Navbar = () => {
 
           </div>
           <div className="navbar-end ml-4 ">
-           
-            
-           
+
 
 
             {
@@ -84,8 +82,8 @@ const Navbar = () => {
                       </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[30] p-2 shadow bg-violet-200 rounded-box w-52">
-                      
-                        <Link className="justify-between">Profile </Link>
+
+                      <Link className="justify-between">Profile </Link>
 
                       <Link to="/dashboard" className=" font-normal">Dashboard</Link>
 
@@ -94,9 +92,9 @@ const Navbar = () => {
                   </div>
                 </>
                 :
-                   <Link to="/signup" className="font-normal">SignUp</Link>
+                <Link to="/signup" className="font-normal">SignUp</Link>
 
-                
+
             }
             {/* if user not login, then show Login btn */}
 
