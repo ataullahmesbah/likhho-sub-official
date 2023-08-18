@@ -16,7 +16,7 @@ const useAdmin = () => {
             
         }
     })
-    // console.log('useAdmin response', isAdmin)
+    console.log('useAdmin response', isAdmin)
     return [isAdmin, isAdminLoading]
 };
 

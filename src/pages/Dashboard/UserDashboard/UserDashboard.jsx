@@ -10,6 +10,7 @@ import Drag from '../../Drag&Drop/Drag';
 import { Link } from '@mui/material';
 import { FavoriteIcon } from '@mui/icons-material/Favorite'
 import Counter from '../../Counting doc/Counter';
+import Drags from '../../DragInAccount/Drags';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -71,23 +72,20 @@ export default function UserDashboard() {
 
                 >
 
-                    <Tab label="Account" {...a11yProps(0)} icon={FavoriteIcon} />
-                    <Tab label="Inbox" {...a11yProps(1)} />
-                    <Tab label="Sent" {...a11yProps(2)} />
-                    <Tab label="Save Document" {...a11yProps(3)} />
-                    <Tab label="Item Five" {...a11yProps(4)} />
-                    <Tab label="Item Six" {...a11yProps(5)} />
-                    <Tab label="Item Seven" {...a11yProps(6)} />
-                    <Tab label="Item Seven" {...a11yProps(7)} />
+                    <Tab label="Create Document" {...a11yProps(0)} icon={FavoriteIcon} />
+                    <Tab label="Account" {...a11yProps(1)} icon={FavoriteIcon} />
+                    <Tab label="Inbox" {...a11yProps(2)} />
+                    <Tab label="Sent" {...a11yProps(3)} />
+                    <Tab label="Save Document" {...a11yProps(4)} />
+                    <Tab label="Template" {...a11yProps(5)} />
+                    <Tab label="FAQ" {...a11yProps(6)} />
                 </Tabs>
                 <TabPanel value={value} index={0} >
                     <div className='flex justify-around gap-5 w-full'>
-                        <Counter></Counter>
-                        <Counter></Counter>
+                        <Drags></Drags>
                     </div>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <Link href="/"></Link>
                     Item Two
                 </TabPanel>
                 <TabPanel value={value} index={2}>
