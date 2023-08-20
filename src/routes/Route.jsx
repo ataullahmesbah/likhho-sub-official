@@ -6,6 +6,7 @@ import Navbar from "../Navbar/Navbar";
 
 import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
+import Editor from "../pages/Editor/Editor/Editor";
 import UserDashboard from "../pages/Dashboard/UserDashboard/UserDashboard";
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:'/dashboard',
         element:<UserDashboard></UserDashboard>
+      },
+      {
+        path:'/editor',
+        element:<Editor></Editor>
       }
     ]
   },
