@@ -7,7 +7,8 @@ import Navbar from "../Navbar/Navbar";
 import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
 import Editor from "../pages/Editor/Editor/Editor";
-import UserDashboard from "../pages/Dashboard/UserDashboard/UserDashboard";
+
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 
 
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/dashboard',
-        element:<UserDashboard></UserDashboard>
+        element:<Dashboard></Dashboard>
       },
       {
         path:'/editor',

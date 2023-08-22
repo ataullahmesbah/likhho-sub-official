@@ -10,6 +10,7 @@ import { AuthContext } from "../pages/Providers/AuthProvider";
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
+  console.log(user)
   const handleLogOut = () => {
     logOut()
       .then()
@@ -43,7 +44,7 @@ const Navbar = () => {
               </ul>
 
             </div>
-            
+
             <Link to={'/'} className="text-3xl"><span className="bg-blue-400 p-1  rounded">L</span>ikho</Link>
 
           </div>
@@ -69,9 +70,9 @@ const Navbar = () => {
 
           </div>
           <div className="navbar-end ml-4 ">
-           
-            
-           
+
+
+
 
 
             {
@@ -80,12 +81,14 @@ const Navbar = () => {
                   <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                       <div >
-                        <img className='w-[50px] h-[50px]  rounded-[50%]' src={user.photoURL} alt="" />
+                        <img className='w-[50px] h-[50px]  rounded-[50%]' src={user.photoURL
+                          ? user.photoURL
+                          : 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1692720433~exp=1692721033~hmac=761eb865f6a68d777e137845df78aa91c0e2ef0f7cad8ec51dac5e1ff71d2c65'} alt="" />
                       </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[30] p-2 shadow bg-violet-200 rounded-box w-52">
-                      
-                        <Link className="justify-between">Profile </Link>
+
+                      <Link className="justify-between">Profile </Link>
 
                       <Link to="/dashboard" className=" font-normal">Dashboard</Link>
 
@@ -94,9 +97,9 @@ const Navbar = () => {
                   </div>
                 </>
                 :
-                   <Link to="/signup" className="font-normal">SignUp</Link>
+                <Link to="/signup" className="font-normal">SignUp</Link>
 
-                
+
             }
             {/* if user not login, then show Login btn */}
 

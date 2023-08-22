@@ -73,12 +73,11 @@ export default function UserDashboard() {
                 >
 
                     <Tab label="Create Document" {...a11yProps(0)} icon={FavoriteIcon} />
-                    <Tab label="Account" {...a11yProps(1)} icon={FavoriteIcon} />
-                    <Tab label="Inbox" {...a11yProps(2)} />
-                    <Tab label="Sent" {...a11yProps(3)} />
-                    <Tab label="Save Document" {...a11yProps(4)} />
-                    <Tab label="Template" {...a11yProps(5)} />
-                    <Tab label="FAQ" {...a11yProps(6)} />
+                    <Tab label="Inbox" {...a11yProps(1)} />
+                    <Tab label="Sent" {...a11yProps(2)} />
+                    <Tab label="Save Document" {...a11yProps(3)} />
+                    <Tab label="Template" {...a11yProps(4)} />
+                    <Tab label="FAQ" {...a11yProps(5)} />
                 </Tabs>
                 <TabPanel value={value} index={0} >
                     <div className='flex justify-around gap-5 w-full'>
@@ -86,23 +85,21 @@ export default function UserDashboard() {
                     </div>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    Item Two
+                    Inbox
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    Item Three
+                    Sent
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    Item Four
+                    Save Document
                 </TabPanel>
                 <TabPanel value={value} index={4}>
-                    Item Five
+                    Template
                 </TabPanel>
                 <TabPanel value={value} index={5}>
-                    Item Six
+                    FAQ
                 </TabPanel>
-                <TabPanel value={value} index={6}>
-                    Item Seven
-                </TabPanel>
+               
             </Box>
         </>
     );

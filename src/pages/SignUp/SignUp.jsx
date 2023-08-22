@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import { FaEye } from 'react-icons/fa';
 import { AuthContext } from '../Providers/AuthProvider';
 import Social from '../shared/Social/Social';
+import saveUser from '../../api/saveUser';
 
 
 const SignUp = () => {
@@ -18,7 +19,7 @@ const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const from = location.state?.from?.pathname || '/'
-    
+
     const togglePassword = () => {
         setShowPassword(!showPassword)
     }
@@ -32,19 +33,22 @@ const SignUp = () => {
                 console.log(loggedUser)
                 updateUserProfile(data.photo)
                 const savedUser = { name: data.name, email: data.email }
-                fetch('http://localhost:5000/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(savedUser)
-                })
+
+                // fetch('http://localhost:5000/users', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(savedUser)
+                // })
+
+                saveUser(data)
                 Swal.fire({
                     icon: 'success',
                     title: 'Signup Successfull',
                     text: 'Welcome to Likho',
                 })
-                navigate(from, {replace: true})
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error.message)

@@ -12,7 +12,7 @@ const useUser = () => {
         queryFn: async()=>{
             const res = axios.get(`http://localhost:5000/general/user/${user.email}`)
 
-            return res.data.admin
+            return res.data.user
         }
     })
 

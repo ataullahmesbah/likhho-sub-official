@@ -83,7 +83,6 @@ export default function AdminDashboard() {
                 <TabPanel value={value} index={0} >
                     <div className='flex justify-around gap-5 w-full'>
                         <Counter></Counter>
-                        <Counter></Counter>
                     </div>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
