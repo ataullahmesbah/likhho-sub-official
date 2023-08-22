@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       <Container>
-        <div className="navbar  bg-black text-white left-0 fixed z-10 bg-opacity-30  w-full">
+        <div className="navbar  bg-black text-white left-0 fixed top-0 z-10 bg-opacity-30  w-full">
           <div className="navbar-start">
             <div className="dropdown ">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -59,9 +59,9 @@ const Navbar = () => {
                 <details>
                   <summary className="  text-white ">Convert</summary>
                   <ul className="p-2 w-32">
-                    <li><Link className="   text-white ">Text to pdf</Link></li>
-                    <li><Link className="   text-white ">Word to pdf</Link></li>
-                    <li><Link className="   text-white ">Docs to pdf</Link></li>
+                    <li><Link className="   text-black ">Text to pdf</Link></li>
+                    <li><Link className="   text-black ">Word to pdf</Link></li>
+                    <li><Link className="   text-black ">Docs to pdf</Link></li>
                   </ul>
                 </details>
               </li>
@@ -77,7 +77,7 @@ const Navbar = () => {
             {
               user ?
                 <>
-                  <div className="dropdown dropdown-end">
+                  <div className="dropdown dropdown-end text-black">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                       <div >
                         <img className='w-[50px] h-[50px]  rounded-[50%]' src={user.photoURL} alt="" />
