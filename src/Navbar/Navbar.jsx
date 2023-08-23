@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "../pages/shared/Container";
 import { useContext } from "react";
 import { AuthContext } from "../pages/Providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 
 
@@ -25,7 +26,7 @@ const Navbar = () => {
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
               </label>
-              <ul tabIndex={0} className=" z-[30] menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-violet-200 rounded-box w-52">
+              <ul tabIndex={0} className=" z-[30] menu menu-sm dropdown-content mt-3 p-2 shadow bg-violet-200 rounded-box w-52">
                 <li><Link>Home</Link></li>
                 <li><Link>Template</Link></li>
 
@@ -71,28 +72,22 @@ const Navbar = () => {
           </div>
           <div className="navbar-end ml-4 ">
 
-
-
-
-
             {
               user ?
                 <>
                   <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                       <div >
-                        <img className='w-[50px] h-[50px]  rounded-[50%]' src={user.photoURL
-                          ? user.photoURL
-                          : 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1692720433~exp=1692721033~hmac=761eb865f6a68d777e137845df78aa91c0e2ef0f7cad8ec51dac5e1ff71d2c65'} alt="" />
+                        {
+                          user.photoURL ? <img className='w-[50px] h-[50px]  rounded-[50%]' src={user.photoURL} alt="" /> : <FaUserCircle className='w-[45px] h-[45px] rounded-[50%]' />
+                        }
                       </div>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[30] p-2 shadow bg-violet-200 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[30] p-2 shadow bg-violet-200 rounded-box w-52 space-y-1">
 
-                      <Link className="justify-between">Profile </Link>
-
-                      <Link to="/dashboard" className=" font-normal">Dashboard</Link>
-
-                      <button onClick={handleLogOut} className="font-normal">Logout</button>
+                      <Link to="/profile" className="font-normal hover:font-semibold">Profile </Link>
+                      <Link to="/dashboard" className="font-normal hover:font-semibold">Dashboard</Link>
+                      <Link onClick={handleLogOut} className="font-normal hover:font-semibold">Logout</Link>
                     </ul>
                   </div>
                 </>
