@@ -12,9 +12,9 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="w-full bg-violet-300 ">
+    <div className="w-full">
       <Container>
-        <div className="navbar  z-10 bg-opacity-30 bg-violet-300 font-bold  w-full">
+        <div className="navbar  bg-black text-white  fixed top-0 left-0 z-50 bg-opacity-30  w-full">
           <div className="navbar-start">
             <div className="dropdown ">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
