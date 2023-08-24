@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGithubAlt, FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -14,6 +14,14 @@ const Social = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
+                // const savedUser = { name: data.name, email: data.email }
+                // fetch('http://localhost:5000/users', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(savedUser)
+                // })
                 Swal.fire({
                     icon: 'success',
                     title: 'Signup Successfull',
@@ -27,10 +35,13 @@ const Social = () => {
     }
     return (
         <div>
-            <div className="divider"></div>
-            <div className="text-center my-2">
-                <button onClick={handleGoogleSignin} className="btn btn-circle btn-outline">
-                    <FaGoogle></FaGoogle>
+            <div className="flex justify-evenly mb-5">
+                <button onClick={handleGoogleSignin} className="btn btn-outline rounded-lg">
+                    <FaGoogle></FaGoogle> Google
+                </button>
+
+                <button className="btn btn-outline rounded-lg">
+                    <FaGithub></FaGithub> Github
                 </button>
             </div>
         </div>
