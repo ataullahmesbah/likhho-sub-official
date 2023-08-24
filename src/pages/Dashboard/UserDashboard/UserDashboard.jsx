@@ -11,6 +11,7 @@ import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
 import ArticleTwoToneIcon from '@mui/icons-material/ArticleTwoTone';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import Counter from '../../Counting doc/Counter';
 import Drags from '../../DragInAccount/Drags';
 
@@ -70,19 +71,19 @@ export default function UserDashboard() {
                         onChange={handleChange}
                         // aria-label="Vertical tabs example"
                         // sx={{ borderRight: 1, borderColor: 'divider' }}
-                        textColor='secondary'
+                        textColor='bg-[#]'
                         indicatorColor='secondary'
                         className='mb-6'
                         centered
-                        sx={{alignItems:'st'}}
+                        sx={{position:'start'}}
                         
 
                     >
 
                         <Tab label="Dashboard" {...a11yProps(0)} sx={{ fontSize: 18, width:'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
                         <Tab label="Inbox" {...a11yProps(1)} sx={{ fontSize: 18, width:'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
-                        <Tab label="Sent" {...a11yProps(2)} sx={{ fontSize: 18, }} icon={<ForwardToInboxIcon />} iconPosition='start' />
-                        <Tab label="Save Document" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
+                        <Tab label="Sent" {...a11yProps(2)} sx={{ fontSize: 18, }} icon={<SendOutlinedIcon />} iconPosition='start' />
+                        <Tab label="Document" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
                         <Tab label="Template" {...a11yProps(4)} sx={{ fontSize: 18, }} icon={<ArticleTwoToneIcon />} iconPosition='start' />
                         <Tab label="Setting" {...a11yProps(5)} sx={{ fontSize: 18, }} icon={<SettingsOutlinedIcon />} iconPosition='start' />
                     </Tabs>
