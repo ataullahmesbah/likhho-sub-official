@@ -59,7 +59,7 @@ const UpdateProfile = () => {
                         </label>
                         <label className="input-group">
 
-                    <input type="text" name="phone" defaultValue={user?.phoneNumber}   placeholder="phone" className="input input-bordered w-full" />
+                    <input type="text" name="phoneNumber" defaultValue={user?.phoneNumber}   placeholder="phoneNumber" className="input input-bordered w-full" />
                         </label>
 
                     </div>

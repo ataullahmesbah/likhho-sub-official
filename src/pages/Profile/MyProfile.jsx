@@ -51,7 +51,7 @@ const MyProfile = () => {
             <h2 className='text-3xl font-semibold mb-5'>My Profile</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="md:flex gap-10">
                 <div className='flex flex-col items-center'>
-                     <img className='' src={user?.photoURL} alt="" /> 
+                     <img className='' src={user.photoURL} alt="" /> 
                     {/* <FaUserCircle className='h-[100px] w-[100px]' /> */}
                     <input type="file" className="file-input file-input-bordered file-input-sm w-56 mt-3" />
                 </div>

@@ -12,6 +12,7 @@ import ProfileDetails from "../pages/Profile/ProfileDetails";
 import MyProfile from "../pages/Profile/MyProfile";
 import ForgotPassword from "../pages/Home/ForgotPassword/ForgotPassword";
 import UpdateProfile from "../pages/Profile/UpdateProfile";
+import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
 
 
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
         loader:({params})=>
         fetch(`http://localhost:5000/users/${params.id}`)
 },
+       { 
+        path:"/chat",
+        element: <ChatContainer></ChatContainer>
+      }
     ]
   },
 ]);
