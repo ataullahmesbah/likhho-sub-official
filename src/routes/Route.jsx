@@ -9,7 +9,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import Editor from "../pages/Editor/Editor/Editor";
 
 import Dashboard from "../pages/Dashboard/Dashboard";
-import UserDashboard from "../pages/Dashboard/UserDashboard/UserDashboard";
 import ProfileDetails from "../pages/Profile/ProfileDetails";
 import MyProfile from "../pages/Profile/MyProfile";
 import ForgotPassword from "../pages/Home/ForgotPassword/ForgotPassword";

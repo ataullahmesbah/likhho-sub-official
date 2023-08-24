@@ -37,45 +37,47 @@ const Drags = () => {
                 className='flex-col '
             >
 
-                <Upload.Dragger
-                    action='http://localhost:5173/' style={{ width: '680px' }}
-                    listType="picture"
-                    accept='.jpg, .jpeg, .doc'
-                    beforeUpload={(file) => {
-                        console.log({ file })
-                        return false
-                    }}
+                <div className='lg:w-full'>
+                    <Upload.Dragger
+                        action='http://localhost:5173/' 
+                        listType="picture"
+                        accept='.jpg, .jpeg, .doc'
+                        beforeUpload={(file) => {
+                            console.log({ file })
+                            return false
+                        }}
 
-                    defaultFileList={[
-                        {
-                            uid: 'abc',
-                            name: 'existing file.png',
-                            status: 'uploading',
-                            url: "https://www.google.com/",
-                            percent: 50
-                        }
-                    ]}
+                        defaultFileList={[
+                            {
+                                uid: 'abc',
+                                name: 'existing file.png',
+                                status: 'uploading',
+                                url: "https://www.google.com/",
+                                percent: 50
+                            }
+                        ]}
 
-                    iconRender={() => {
-                        return <Spin></Spin>
-                    }}
+                        iconRender={() => {
+                            return <Spin></Spin>
+                        }}
 
-                    progress={{
-                        strokeWidth: 3,
-                        strokeColor: {
-                            "0%": "#f0f",
-                            "100%": "#ff0"
-                        },
+                        progress={{
+                            strokeWidth: 3,
+                            strokeColor: {
+                                "0%": "#f0f",
+                                "100%": "#ff0"
+                            },
 
-                        style: { top: 12 },
-                    }}
-                >
-                    <Button>Drag & Drop the file</Button>
-                    <br />
-                    <br />
+                            style: { top: 12 },
+                        }}
+                    >
+                        <Button>Drag & Drop the file</Button>
+                        <br />
+                        <br />
 
-                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
-                </Upload.Dragger>
+                        <Button icon={<UploadOutlined />}>Click to Upload</Button>
+                    </Upload.Dragger>
+                </div>
                 <div className='lg:ml-40 lg:mt-10'>
                     <button>
                         <Link to={'/editor'} className='text-3xl font-bold text-slate-500'>Create a new document</Link>

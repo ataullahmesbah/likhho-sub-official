@@ -44,7 +44,7 @@ const SignUp = () => {
                 //     body: JSON.stringify(savedUser)
                 // })
 
-                saveUser(data)
+                saveUser(result.user)
                 Swal.fire({
                     icon: 'success',
                     title: 'Signup Successfull',

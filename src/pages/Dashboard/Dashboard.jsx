@@ -9,10 +9,10 @@ import UserDashboard from './UserDashboard/UserDashboard';
 const Dashboard = () => {
 
     const { user } = useContext(AuthContext)
-    const useAdmins = useAdmin()
-    const useUsers = useUser()
+    const [useAdmins] = useAdmin()
+    const [useUsers] = useUser()
 
-    
+
 
     console.log(useAdmins, useUsers, user.email)
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
             {
                 useAdmins && <AdminDashboard></AdminDashboard>
 
-                
+
             }
 
             {
