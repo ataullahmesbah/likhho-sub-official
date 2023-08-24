@@ -6,11 +6,10 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Account from '../../Account/Account';
-import Drag from '../../Drag&Drop/Drag';
-import { Link } from '@mui/material';
-import { FavoriteIcon } from '@mui/icons-material/Favorite'
+
 import Counter from '../../Counting doc/Counter';
 import Drags from '../../DragInAccount/Drags';
+import { HomeRepairServiceOutlined } from '@mui/icons-material';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -73,7 +72,8 @@ export default function AdminDashboard() {
 
                     >
 
-                        <Tab label="Account" {...a11yProps(0)} icon={FavoriteIcon} />
+                        <Tab label="Account" {...a11yProps(0)} icon={HomeRepairServiceOutlined} />
+
                         <Tab label="Inbox" {...a11yProps(1)} />
                         <Tab label="Sent" {...a11yProps(2)} />
                         <Tab label="Save Document" {...a11yProps(3)} />
@@ -88,7 +88,9 @@ export default function AdminDashboard() {
                         </div>
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                       ok
+                        <div className='w-full'>
+                            <Counter></Counter>
+                        </div>
                     </TabPanel>
                     <TabPanel value={value} index={2}>
                         Item Three

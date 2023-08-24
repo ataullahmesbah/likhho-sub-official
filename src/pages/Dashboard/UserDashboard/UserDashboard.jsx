@@ -6,11 +6,14 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Account from '../../Account/Account';
-import Drag from '../../Drag&Drop/Drag';
-import { Link } from '@mui/material';
-import { FavoriteIcon } from '@mui/icons-material/Favorite'
+import HomeIcon from '@mui/icons-material/Home';
+import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
+import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
+import ArticleTwoToneIcon from '@mui/icons-material/ArticleTwoTone';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import Counter from '../../Counting doc/Counter';
 import Drags from '../../DragInAccount/Drags';
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -45,6 +48,7 @@ function a11yProps(index) {
     };
 }
 
+
 export default function UserDashboard() {
     const [value, setValue] = React.useState(0);
 
@@ -57,7 +61,7 @@ export default function UserDashboard() {
             <div className='bg-[#93B1A6]'>
                 <Account></Account>
                 <Box
-                    sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: "BiFullscreen", height: 624 }}
+                    sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: "BiFullscreen", height: "100vh", backgroundColor: 'bg-[#93B1A6]' }}
                 >
                     <Tabs
                         orientation="vertical"
@@ -70,23 +74,27 @@ export default function UserDashboard() {
                         indicatorColor='secondary'
                         className='mb-6'
                         centered
+                        sx={{alignItems:'st'}}
+                        
 
                     >
 
-                        <Tab label="Create Document" {...a11yProps(0)} icon={FavoriteIcon} />
-                        <Tab label="Inbox" {...a11yProps(1)} />
-                        <Tab label="Sent" {...a11yProps(2)} />
-                        <Tab label="Save Document" {...a11yProps(3)} />
-                        <Tab label="Template" {...a11yProps(4)} />
-                        <Tab label="FAQ" {...a11yProps(5)} />
+                        <Tab label="Dashboard" {...a11yProps(0)} sx={{ fontSize: 18, width:'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
+                        <Tab label="Inbox" {...a11yProps(1)} sx={{ fontSize: 18, width:'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
+                        <Tab label="Sent" {...a11yProps(2)} sx={{ fontSize: 18, }} icon={<ForwardToInboxIcon />} iconPosition='start' />
+                        <Tab label="Save Document" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
+                        <Tab label="Template" {...a11yProps(4)} sx={{ fontSize: 18, }} icon={<ArticleTwoToneIcon />} iconPosition='start' />
+                        <Tab label="Setting" {...a11yProps(5)} sx={{ fontSize: 18, }} icon={<SettingsOutlinedIcon />} iconPosition='start' />
                     </Tabs>
                     <TabPanel value={value} index={0} >
                         <div className='flex justify-around gap-5 w-full'>
                             <Drags></Drags>
                         </div>
                     </TabPanel>
-                    <TabPanel value={value} index={1}>
-                        Inbox
+                    <TabPanel value={value} index={1} sx={{ wi: 'BiFullscreen' }}>
+                        <div className=' justify-center w-full'>
+                            <Counter></Counter>
+                        </div>
                     </TabPanel>
                     <TabPanel value={value} index={2}>
                         Sent

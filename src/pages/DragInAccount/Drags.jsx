@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 
 const Drags = () => {
     return (
-        <div className='lg:ml-48'>
+        <div className='lg:ml-48 w-full'>
             <h1 className='text-center font-bold text-3xl text-gray-400  mb-12'>Upload here your file to edit</h1>
             <div
                 style={{
