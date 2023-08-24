@@ -59,9 +59,18 @@ const Navbar = () => {
                   </ul>
                 </li>
 
+
+
+
                 <li>
                   <Link>About</Link>
                 </li>
+
+                <li>
+                  <Link to='/blog'>Blog</Link>
+                </li>
+          
+                
               </ul>
             </div>
 
@@ -98,6 +107,9 @@ const Navbar = () => {
               <li>
                 <Link className=" font-normal">About</Link>
               </li>
+              <li>
+                  <Link to='/blog'>Blog</Link>
+                </li>
             </ul>
           </div>
           <div className="navbar-end ml-4 ">
