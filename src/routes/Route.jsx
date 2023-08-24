@@ -11,6 +11,7 @@ import UserDashboard from "../pages/Dashboard/UserDashboard/UserDashboard";
 import ProfileDetails from "../pages/Profile/ProfileDetails";
 import MyProfile from "../pages/Profile/MyProfile";
 import ForgotPassword from "../pages/Home/ForgotPassword/ForgotPassword";
+import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
 
 
 
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path:'/editor',
         element:<Editor></Editor>
+      },
+      {
+        path:"/chat",
+        element: <ChatContainer></ChatContainer>
       }
     ]
   },
