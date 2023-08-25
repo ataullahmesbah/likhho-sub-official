@@ -15,6 +15,7 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import Counter from '../../Counting doc/Counter';
 import Drags from '../../DragInAccount/Drags';
 import PersonalDashboard from '../PersonalDashboard/PersonalDashboard';
+import { Button } from '@mui/material';
 
 
 function TabPanel(props) {
@@ -64,6 +65,7 @@ export default function UserDashboard() {
                 <Account></Account>
                 <Box
                     sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: 'auto', height: "100vh", backgroundColor: 'bg-[#93B1A6]' }}
+                    alignItems={'start'}
                 >
                     <Tabs
                         orientation="vertical"
@@ -77,20 +79,23 @@ export default function UserDashboard() {
                         className='mb-6'
                         centered
 
-                        sx={{ position: 'start' }}
+                        sx={{ alignItems: 'self-start' }}
 
 
                     >
 
-                        <Tab label="Dashboard" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
-                        <Tab label="Inbox" {...a11yProps(1)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
-                        <Tab label="Sent" {...a11yProps(2)} sx={{ fontSize: 18, }} icon={<SendOutlinedIcon />} iconPosition='start' />
-                        <Tab label="Document" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
-                        <Tab label="Template" {...a11yProps(4)} sx={{ fontSize: 18, }} icon={<ArticleTwoToneIcon />} iconPosition='start' />
-                        <Tab label="Setting" {...a11yProps(5)} sx={{ fontSize: 18, }} icon={<SettingsOutlinedIcon />} iconPosition='start' />
+                        <Button color='primary'>
+                            <Tab label="New Document" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
+                        </Button>
+                        <Tab label="Dashboard" {...a11yProps(1)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
+                        <Tab label="Inbox" {...a11yProps(2)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
+                        <Tab label="Sent" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<SendOutlinedIcon />} iconPosition='start' />
+                        <Tab label="Document" {...a11yProps(4)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
+                        <Tab label="Template" {...a11yProps(5)} sx={{ fontSize: 18, }} icon={<ArticleTwoToneIcon />} iconPosition='start' />
+                        <Tab label="Setting" {...a11yProps(6)} sx={{ fontSize: 18, }} icon={<SettingsOutlinedIcon />} iconPosition='start' />
                     </Tabs>
                     <TabPanel value={value} index={0} sx={{ width: 'auto' }} >
-                        <div className='flex justify-around gap-5 w-full'>
+                        <div className='justify-around gap-5 w-full'>
                             <PersonalDashboard></PersonalDashboard>
                         </div>
                     </TabPanel>
