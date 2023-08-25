@@ -13,7 +13,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="w-full mb-8">
+    <div className="w-full">
       <Container>
         <div className="navbar  bg-black text-white  fixed top-0 left-0 z-50 bg-opacity-30  w-full ">
           <div className="navbar-start">
