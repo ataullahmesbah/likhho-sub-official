@@ -59,11 +59,11 @@ const MyProfile = () => {
 
     return (
         <div className=' flex justify-center item-center border px-20 py-8 bg-blue-50 ' >
-        <div className='w-full'>
+        <div className='mt-16'>
             <h2 className='text-3xl font-semibold mb-5 '>My Profile</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="md:flex gap-10">
                 <div className='flex flex-col items-center'>
-                     <img className='h-[150px] w-[150px] rounded-[50%]' src={user.photoURL} alt="" /> 
+                     <img className='h-[100px] w-[10px] rounded-[50%]' src={user.photoURL} alt="" /> 
                     {/* <FaUserCircle className='h-[100px] w-[100px]' /> */}
                     {/* <input type="file" className="file-input file-input-bordered file-input-sm w-56 mt-3" /> */}
                 </div>
@@ -89,7 +89,7 @@ const MyProfile = () => {
                             <input readOnly type="number" defaultValue={dbUser?.phone} {...register("phoneNumber", { required: true })} placeholder="phone number" className="input input-bordered rounded-lg" />
                         </div>
 
-                        <div className="form-control mt-2">
+                        <div className="form-control mt-2 pt-2">
                            <Link 
                              to={`/updateProfile/${dbUser?._id}`}
                            

@@ -53,14 +53,14 @@ const UpdateProfile = () => {
 
     }
     return (
-        <div className="flex justify-center item-center border px-20 py-8  ">
+        <div className="flex justify-center item-center border px-20 py-8  bg-blue-50 ">
            
-            <div className=' text-center bg-blue-50 mt-8 p-8'>
+            <div className=' text-center mt-8'>
             <h2 className='text-3xl font-semibold mb-5 '>Update Profile</h2>
             <form onSubmit={handleUpdateProfile} className='md:flex gap-10'>
                 {/* name and quantity row */}
-                <div className='flex flex-col  '>
-                     <img className='h-[150px] w-[150px] rounded-[50%]' src={user.photoURL} alt="" /> 
+                <div className='flex flex-col  items-center'>
+                     <img className='h-[100px] w-[100px] rounded-[50%]' src={user.photoURL} alt="" /> 
                     {/* <FaUserCircle className='h-[100px] w-[100px]' /> */}
                     {/* <input type="file" className="file-input file-input-bordered file-input-sm w-56 mt-3" /> */}
                 </div>
@@ -89,13 +89,11 @@ const UpdateProfile = () => {
 
                     </div>
 
-              <div className='form-control py-4'>
-                     
-               <Link to="/profile">
-               <input type="submit" value="Update Profile" className="btn bg-blue-300" />
-               </Link>
+              
+                <input type="submit" value="Update Profile" className="btn rounded-lg mt-2 bg-blue-300" />
+               
                 
-              </div>
+              
                     </div>
                 </div>
 
