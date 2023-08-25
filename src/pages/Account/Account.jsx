@@ -1,17 +1,40 @@
-import { Avatar } from '@mui/material';
-import React, { useContext } from 'react';
+/* eslint-disable no-undef */
+/* eslint-disable react/jsx-no-undef */
+import { Avatar, IconButton, Badge } from '@mui/material';
+import React from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
+import MailIcon from '@mui/icons-material/Mail';
+
 
 const Account = () => {
-
-    const { user } = useContext(AuthContext)
-
+    const user = useContext(AuthContext);
+    console.log(user.user?.displayName)
     return (
-        <div className='bg-[#2d6262] mt-0'>
-            <div className='p-4 lg:ml-5'>
-                <Avatar alt="Remy Sharp" sx={{ width: 86, height: 86, }} src={user.photoURL ? user.photoURL : 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1692720433~exp=1692721033~hmac=761eb865f6a68d777e137845df78aa91c0e2ef0f7cad8ec51dac5e1ff71d2c65'} />
+        <div className='grid grid-cols-3 shadow-md'>
+            <div className='flex justify-start items-center pl-5 py-3'>
+                <Avatar alt="Remy Sharp" sx={{ width: 50, height: 50, }} src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&ga=GA1.2.1842592228.1683275805&semt=sph" />
+                <div className='pl-2'>
+                    <h2 className='text-lg font-bold text-slate-600 font-sans'>{user.user?.displayName}</h2>
+                    <p className='text-gray-500'>{user.user?.email}</p>
+                </div>
             </div>
-            <h1 className='font-bold lg:ml-10 pb-2 text-white'>{user?.displayName}</h1>
+            <div className='grid justify-start items-center  '>
+                <h1 className='text-2xl font-serif font-bold'><span className='text-sky-500'>L</span>ikho</h1>
+            </div>
+            <div className='flex justify-end items-center gap-2 mr-5'>
+                <h3> <button className='py-1 px-2 bg-[#0284C7] text-white text-xs rounded-md'>UPGRADE </button> </h3>
+                <h3>
+                    <IconButton aria-label={100}>
+                        <Badge badgeContent={4} color="error">
+                            <MailIcon />
+                        </Badge>
+                    </IconButton>
+                </h3>
+                <h3>
+                    <Avatar alt="Remy Sharp" sx={{ width: 40, height: 40, }} src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&ga=GA1.2.1842592228.1683275805&semt=sph" />
+                </h3>
+            </div>
         </div>
     );
 };
