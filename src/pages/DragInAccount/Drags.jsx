@@ -24,8 +24,8 @@ import { Link } from 'react-router-dom';
 
 const Drags = () => {
     return (
-        <div className='lg:ml-48 w-full'>
-            <h1 className='text-center font-bold text-3xl text-gray-400  mb-12'>Upload here your file to edit</h1>
+        <div className='lg:ml-48 w-full bg-white shadow-md p-3 mt-6 rounded-md'>
+            <h1 className='text-center font-bold text-3xl text-gray-600  mb-12'>Upload here your file to edit</h1>
             <div
                 style={{
                     justifyContent: 'center',
@@ -78,9 +78,9 @@ const Drags = () => {
                         <Button icon={<UploadOutlined />}>Click to Upload</Button>
                     </Upload.Dragger>
                 </div>
-                <div className='lg:ml-40 lg:mt-10'>
-                    <button>
-                        <Link to={'/editor'} className='text-3xl font-bold text-slate-500 btn bg-[#d3d2c9]'>Create a new document</Link>
+                <div className='lg:ml-40 lg:mt-10 py-4 px-8'>
+                    <button className=''>
+                        <Link to={'/editor'} className='text-3xl font-bold text-slate-500 btn bg-[#f1f4f4]'>Create a new document</Link>
                     </button>
                 </div>
             </div>

@@ -61,7 +61,7 @@ export default function UserDashboard() {
 
     return (
         <>
-            <div className='bg-[#e4e8e6]'>
+            <div className='bg-[#dde2df]'>
                 <Account></Account>
                 <Box
                     sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: 'auto', height: "100vh", backgroundColor: 'bg-[#93B1A6]' }}
