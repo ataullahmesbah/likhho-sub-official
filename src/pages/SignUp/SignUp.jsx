@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { FaEye } from 'react-icons/fa';
 import { AuthContext } from '../Providers/AuthProvider';
 import Social from '../shared/Social/Social';
+import saveUser from '../../api/saveUser';
 import Lottie from 'react-lottie';
 import animationData from '../../../public/signup.json';
 
@@ -19,6 +20,7 @@ const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const from = location.state?.from?.pathname || '/'
+
 
     const togglePassword = () => {
         setShowPassword(!showPassword)
@@ -32,27 +34,23 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 updateUserProfile(data.photo)
-                const savedUser = { displayName: data.displayName, email: data.email }
-                fetch('http://localhost:5000/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(savedUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        if (data.insertedId) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Signup Successfull',
-                                text: 'Welcome to Likho',
-                            })
-                            navigate(from, { replace: true })
-                        }
-                    })
+                const savedUser = { name: data.name, email: data.email }
 
+                // fetch('http://localhost:5000/users', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(savedUser)
+                // })
+
+                saveUser(result.user)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Signup Successfull',
+                    text: 'Welcome to Likho',
+                })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error.message)
