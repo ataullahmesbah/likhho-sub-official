@@ -84,7 +84,7 @@ export default function UserDashboard() {
 
                     >
 
-                        <Button color='primary'>
+                        <Button color='primary' variant='contained'>
                             <Tab label="New Document" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
                         </Button>
                         <Tab label="Dashboard" {...a11yProps(1)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
