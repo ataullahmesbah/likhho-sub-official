@@ -4,9 +4,13 @@ import Footer from "../pages/shared/Footer";
 
 
 const MainLayout = () => {
+
+
+    const noHeaderFooter = location.pathname.includes('dashboard') || location.pathname.includes('editor')
+
     return (
         <div>
-            <Navbar></Navbar>
+           { noHeaderFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

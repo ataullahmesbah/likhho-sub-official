@@ -80,7 +80,7 @@ const Drags = () => {
                 </div>
                 <div className='lg:ml-40 lg:mt-10'>
                     <button>
-                        <Link to={'/editor'} className='text-3xl font-bold text-slate-500'>Create a new document</Link>
+                        <Link to={'/editor'} className='text-3xl font-bold text-slate-500 btn bg-[#d3d2c9]'>Create a new document</Link>
                     </button>
                 </div>
             </div>

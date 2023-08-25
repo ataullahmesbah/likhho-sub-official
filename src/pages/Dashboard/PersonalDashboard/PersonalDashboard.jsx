@@ -8,7 +8,7 @@ const PersonalDashboard = () => {
 
 
     return (
-        <div className='bg-[#e5e9eb] p-6 lg:ml-8 shadow-black' style={{width:'1280px', height:'70vh'}}>
+        <div className='bg-[#bec8cd] p-6 lg:ml-8 shadow-black' style={{width:'1280px', height:'70vh'}}>
             <h1>DashBoard</h1>
             <div className=''>
                 <div className=''>
@@ -25,6 +25,7 @@ const PersonalDashboard = () => {
                     <p>{user.displayName}</p>
                     <p>Document Created</p>
                 </div>
+                <hr  className='bg-black max-w-full'/>
             </div>
         </div>
     );
