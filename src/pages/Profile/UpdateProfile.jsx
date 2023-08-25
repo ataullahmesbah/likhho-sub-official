@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {  Link, useLoaderData, useParams } from 'react-router-dom';
+import {  Link, useParams } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const UpdateProfile = () => {
@@ -53,21 +53,21 @@ const UpdateProfile = () => {
 
     }
     return (
-        <div className="flex justify-center item-center border px-20 py-8 bg-blue-50">
+        <div className="flex justify-center item-center border px-20 py-8  ">
            
-            <div className='w-full'>
+            <div className=' text-center bg-blue-50 mt-8 p-8'>
             <h2 className='text-3xl font-semibold mb-5 '>Update Profile</h2>
-            <form onSubmit={handleUpdateProfile}>
+            <form onSubmit={handleUpdateProfile} className='md:flex gap-10'>
                 {/* name and quantity row */}
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col  '>
                      <img className='h-[150px] w-[150px] rounded-[50%]' src={user.photoURL} alt="" /> 
                     {/* <FaUserCircle className='h-[100px] w-[100px]' /> */}
                     {/* <input type="file" className="file-input file-input-bordered file-input-sm w-56 mt-3" /> */}
                 </div>
 
                 <div className='className="max-w-sm"'>
-                    <div className='text-center'>
-                    <div className="form-control md:w-1/2 ml-4 mb-8 ">
+                    <div className=''>
+                    <div className="form-control ">
                         <label className="label">
                             <span className="label-text">Detail Name</span>
                         </label>
@@ -78,7 +78,7 @@ const UpdateProfile = () => {
 
                     </div>
 
-                    <div className="form-control md:w-1/2 ml-4 mb-8">
+                    <div className="form-control ">
                         <label className="label">
                             <span className="label-text">Phone Number</span>
                         </label>
@@ -89,7 +89,7 @@ const UpdateProfile = () => {
 
                     </div>
 
-              <div>
+              <div className='form-control py-4'>
                      
                <Link to="/profile">
                <input type="submit" value="Update Profile" className="btn bg-blue-300" />
