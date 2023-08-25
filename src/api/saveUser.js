@@ -2,12 +2,14 @@ import axios from 'axios';
 import React from 'react';
 
 const saveUser = (user) => {
+    console.log(user)
     const currentUser = {
         email: user.email,
-        role: "user"
+        // name:user.name,
+        role: "user",
     }
 
-    axios.post(`http://localhost:5000/users/${user.email}`, currentUser)
+    axios.put(`http://localhost:5000/users/${user.email}`, currentUser)
     .then(data=>{
         console.log(data)
     })

@@ -6,11 +6,17 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Account from '../../Account/Account';
-import Drag from '../../Drag&Drop/Drag';
-import { Link } from '@mui/material';
-import { FavoriteIcon } from '@mui/icons-material/Favorite'
+import HomeIcon from '@mui/icons-material/Home';
+import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
+import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
+import ArticleTwoToneIcon from '@mui/icons-material/ArticleTwoTone';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import Counter from '../../Counting doc/Counter';
 import Drags from '../../DragInAccount/Drags';
+import PersonalDashboard from '../PersonalDashboard/PersonalDashboard';
+import { Button } from '@mui/material';
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -45,6 +51,7 @@ function a11yProps(index) {
     };
 }
 
+
 export default function UserDashboard() {
     const [value, setValue] = React.useState(0);
 
@@ -54,58 +61,65 @@ export default function UserDashboard() {
 
     return (
         <>
-            <Account></Account>
-            <div className='py-12'>
-            <Box
-                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: "BiFullscreen", height: 600 , }}
-            >
-                <Tabs
-                    orientation="vertical"
-                    // variant="scrollable"
-                    value={value}
-                    onChange={handleChange}
-                    // aria-label="Vertical tabs example"
-                    // sx={{ borderRight: 1, borderColor: 'divider' }}
-                    textColor='secondary'
-                    indicatorColor='secondary'
-                    className='mb-6'
-                    centered
-
+            <div className='bg-[#93B1A6]'>
+                <Account></Account>
+                <Box
+                    sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: 'auto', height: "100vh", backgroundColor: 'bg-[#93B1A6]' }}
+                    alignItems={'start'}
                 >
+                    <Tabs
+                        orientation="vertical"
+                        // variant="scrollable"
+                        value={value}
+                        onChange={handleChange}
+                        // aria-label="Vertical tabs example"
+                        // sx={{ borderRight: 1, borderColor: 'divider' }}
+                        textColor='bg-[#]'
+                        indicatorColor='secondary'
+                        className='mb-6'
+                        centered
 
-                    <Tab label="Create Document" {...a11yProps(0)} icon={FavoriteIcon} />
-                    <Tab label="Account" {...a11yProps(1)} icon={FavoriteIcon} />
-                    <Tab label="Inbox" {...a11yProps(2)} />
-                    <Tab label="Sent" {...a11yProps(3)} />
-                    <Tab label="Save Document" {...a11yProps(4)} />
-                    <Tab label="Template" {...a11yProps(5)} />
-                    <Tab label="FAQ" {...a11yProps(6)} />
-                </Tabs>
-                <TabPanel value={value} index={0} >
-                    <div className='flex justify-around gap-5 w-full'>
-                        <Drags></Drags>
-                        <p>hello</p>
-                    </div>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    Item Two
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    Item Three
-                </TabPanel>
-                <TabPanel value={value} index={3}>
-                    Item Four
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                    Item Five
-                </TabPanel>
-                <TabPanel value={value} index={5}>
-                    Item Six
-                </TabPanel>
-                <TabPanel value={value} index={6}>
-                    Item Seven
-                </TabPanel>
-            </Box>
+                        sx={{ alignItems: 'self-start' }}
+
+
+                    >
+
+                        <Button color='primary'>
+                            <Tab label="New Document" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
+                        </Button>
+                        <Tab label="Dashboard" {...a11yProps(1)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
+                        <Tab label="Inbox" {...a11yProps(2)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
+                        <Tab label="Sent" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<SendOutlinedIcon />} iconPosition='start' />
+                        <Tab label="Document" {...a11yProps(4)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
+                        <Tab label="Template" {...a11yProps(5)} sx={{ fontSize: 18, }} icon={<ArticleTwoToneIcon />} iconPosition='start' />
+                        <Tab label="Setting" {...a11yProps(6)} sx={{ fontSize: 18, }} icon={<SettingsOutlinedIcon />} iconPosition='start' />
+                    </Tabs>
+                    <TabPanel value={value} index={0} sx={{ width: 'auto' }} >
+                        <div className='justify-around gap-5 w-full'>
+                            <PersonalDashboard></PersonalDashboard>
+                        </div>
+                    </TabPanel>
+                    <TabPanel value={value} index={1} sx={{ width: 'auto' }}>
+                        <div className=' justify-center w-full'>
+                            <Counter></Counter>
+                        </div>
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        Sent
+                    </TabPanel>
+                    <TabPanel value={value} index={3}>
+                        <div>
+                            <Drags></Drags>
+                        </div>
+                    </TabPanel>
+                    <TabPanel value={value} index={4}>
+                        Template
+                    </TabPanel>
+                    <TabPanel value={value} index={5}>
+                        FAQ
+                    </TabPanel>
+
+                </Box>
             </div>
         </>
     );
