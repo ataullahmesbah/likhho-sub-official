@@ -55,8 +55,9 @@ export default function UserDashboard() {
     return (
         <>
             <Account></Account>
+            <div className='py-12'>
             <Box
-                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: "BiFullscreen", height: 624 }}
+                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: "BiFullscreen", height: 600 , }}
             >
                 <Tabs
                     orientation="vertical"
@@ -83,6 +84,7 @@ export default function UserDashboard() {
                 <TabPanel value={value} index={0} >
                     <div className='flex justify-around gap-5 w-full'>
                         <Drags></Drags>
+                        <p>hello</p>
                     </div>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
@@ -104,6 +106,7 @@ export default function UserDashboard() {
                     Item Seven
                 </TabPanel>
             </Box>
+            </div>
         </>
     );
 }
