@@ -12,6 +12,9 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import ProfileDetails from "../pages/Profile/ProfileDetails";
 import MyProfile from "../pages/Profile/MyProfile";
 import ForgotPassword from "../pages/Home/ForgotPassword/ForgotPassword";
+import UpdateProfile from "../pages/Profile/UpdateProfile";
+import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
+import Blog from "../pages/shared/Blog/Blog";
 
 
 
@@ -47,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
-        loader: () => fetch(`http://localhost:5000/users`)
+        loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
       },
       {
         path:'/dashboard',
@@ -56,6 +59,20 @@ const router = createBrowserRouter([
       {
         path:'/editor',
         element:<Editor></Editor>
+      },
+      {
+        path: "/updateProfile/:id",
+        element: <UpdateProfile></UpdateProfile>,
+        loader:({params})=>
+        fetch(`http://localhost:5000/users/${params.id}`)
+},
+       { 
+        path:"/chat",
+        element: <ChatContainer></ChatContainer>
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
       }
     ]
   },
