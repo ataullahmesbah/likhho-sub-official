@@ -7,12 +7,13 @@ const MainLayout = () => {
 
 
     const noHeaderFooter = location.pathname.includes('dashboard') || location.pathname.includes('editor')
+    const noFooter = location.pathname.includes('dash')
 
     return (
         <div>
            { noHeaderFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
-            <Footer></Footer>
+            {noFooter || <Footer></Footer>}
         </div>
     );
 };

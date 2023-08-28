@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 
 const Drags = () => {
     return (
-        <div className='lg:ml-48 w-full bg-white shadow-md p-3 mt-6 rounded-md'>
+        <div className='lg:ml-14 w-3/4 bg-white shadow-md p-3 mt-6 rounded-md'>
             <h1 className='text-center font-bold text-3xl text-gray-600  mb-12'>Upload here your file to edit</h1>
             <div
                 style={{
@@ -32,7 +32,7 @@ const Drags = () => {
                     alignItems: 'center',
                     // display: 'flex',
                     listType: 'picture',
-                    height: '28vh'
+                    height: '60vh'
                 }}
                 className='flex-col '
             >
@@ -78,7 +78,7 @@ const Drags = () => {
                         <Button icon={<UploadOutlined />}>Click to Upload</Button>
                     </Upload.Dragger>
                 </div>
-                <div className='lg:ml-40 lg:mt-10 py-4 px-8'>
+                <div className='lg:mt-10 py-2 px-8'>
                     <button className=''>
                         <Link to={'/editor'} className='text-3xl font-bold text-slate-500 btn bg-[#f1f4f4]'>Create a new document</Link>
                     </button>
