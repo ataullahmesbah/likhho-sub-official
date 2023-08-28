@@ -24,7 +24,7 @@ const CreativeWorkShop = () => {
                             url="/public/home-banner.mp4"
                             controls={true} // Use controls for auto play and custom play button
                             playing
-                            width="100%"
+                            width="50%"
                             height="100%"
                         />
                     </div>
