@@ -9,11 +9,11 @@ const saveUser = (user) => {
         role: "user",
     }
 
-    axios.put(`http://localhost:5000/users/${user.email}`, currentUser)
-    .then(data=>{
-        console.log(data)
-    })
-    .catch(error=>{console.log(error.message)})
+    axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => { console.log(error.message) })
 };
 
 export default saveUser;

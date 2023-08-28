@@ -1,5 +1,5 @@
 import React from 'react';
-import { UploadOutlined } from '@ant-design/icons';
+
 import { Button, Spin, Upload } from 'antd';
 import banner from '../../pages/images/banner/banner2.jpg';
 import wordIcon from '../../pages/images/banner/word_icon.png';
@@ -52,7 +52,7 @@ const Drag = () => {
 
 
         <div className="sm:text-left lg:mx-4 xl:mx-28" style={{ fontFamily: 'Roboto, sans-serif' }}>
-          <h6 className="text-3xl sm:text-5xl md:text-4xl md:px-10 text-white py-4 font-bold">
+          <h6 className="text-3xl sm:text-5xl md:text-4xl md:px-10 text-blue-950 py-4 font-bold">
             Elevate Your Documents with LIKHO's Free <br /> Online Editing
           </h6>
           <p className="md:px-10 py-4">
@@ -65,7 +65,7 @@ const Drag = () => {
 
 
         <div className="sm:pb-4 md:pb-8 lg:pb-14">
-          <div className="z-10 bg-blue-100 p-4 rounded-lg mx-4 md:mx-auto md:w-[80%] lg:w-[50%]">
+          <div className="z-10 bg-blue-200 p-4 rounded-lg mx-4 md:mx-auto md:w-[80%] lg:w-[50%]">
             <Upload.Dragger
               action="http://localhost:5173/"
               listType="picture"
