@@ -39,10 +39,10 @@ const EditDocs = () => {
 
     <div className="bg-gradient-to-r from-gray-600 via-blue-900 to-blue-400 lg:mt-[-239px]">
       <Container>
-      <h2 className="text-center text-orange-200 font-bold text-5xl pt-8 lg:pt-28">
+      {/* <h2 className="text-center text-orange-200 font-bold text-5xl pt-8 lg:pt-28">
           Online Documents Editor
-        </h2>
-        <div className="flex flex-col-reverse lg:flex-row lg:h-auto space-y-6 lg:space-y-0 lg:space-x-10 mx-auto pt-4 lg:pt-28 justify-center pb-10">
+        </h2> */}
+        <div className="flex flex-col-reverse   lg:flex-row lg:h-auto space-y-6 lg:space-y-0 lg:space-x-10 mx-auto pt-28 lg:pt-64 justify-center pb-10">
           
 
 
