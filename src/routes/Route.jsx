@@ -66,8 +66,7 @@ const router = createBrowserRouter([
         loader:({params})=>
         fetch(`http://localhost:5000/users/${params.id}`)
 },
-       { 
-        path:"/chat",
+       { path:"/chat",
         element: <ChatContainer></ChatContainer>
       },
       {
