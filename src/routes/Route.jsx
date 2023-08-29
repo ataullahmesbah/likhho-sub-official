@@ -15,7 +15,11 @@ import ForgotPassword from "../pages/Home/ForgotPassword/ForgotPassword";
 import UpdateProfile from "../pages/Profile/UpdateProfile";
 import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
 import Blog from "../pages/shared/Blog/Blog";
-import Dash from "../pages/Dashboard/Dash";
+
+import DashBoardSent from "../pages/Dashboard/DashBoardSent/DashBoardSent";
+import DashBoardInbox from "../pages/Dashboard/DashBoardInbox/DashBoardInbox";
+import DashBoardTemplate from "../pages/Dashboard/DashBoardTemplate/DashBoardTemplate";
+import DashDocument from "../pages/DashDocument/DashDocument";
 
 
 
@@ -55,7 +59,30 @@ const router = createBrowserRouter([
       },
       {
         path:'/dashboard',
-        element:<Dashboard></Dashboard>
+        element:<Dashboard></Dashboard>,
+        children:[
+          {
+            path:'newDoc',
+            element:<DashDocument></DashDocument>
+          },
+          {
+            path:'inbox',
+            element:<DashBoardInbox></DashBoardInbox>
+          },
+          {
+            path:'sent',
+            element:<DashBoardSent></DashBoardSent>
+          },
+          {
+            path:'template',
+            element:<DashBoardTemplate></DashBoardTemplate>
+          },
+          // {
+            
+          // }
+          
+        ]
+
       },
       {
         path:'/editor',
@@ -76,7 +103,7 @@ const router = createBrowserRouter([
       },
       {
         path:'dash',
-        element:<Dash></Dash>
+        element:''
       }
     ]
   },

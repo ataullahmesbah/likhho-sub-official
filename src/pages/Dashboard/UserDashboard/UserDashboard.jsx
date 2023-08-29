@@ -1,126 +1,267 @@
-
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
+import { useState } from 'react';
+import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Account from '../../Account/Account';
-import HomeIcon from '@mui/icons-material/Home';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
+import MuiDrawer from '@mui/material/Drawer';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import Account from '../../Account/Account'
+import PostAddIcon from '@mui/icons-material/PostAdd';
 import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
-import ArticleTwoToneIcon from '@mui/icons-material/ArticleTwoTone';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import Counter from '../../Counting doc/Counter';
 import Drags from '../../DragInAccount/Drags';
-import PersonalDashboard from '../PersonalDashboard/PersonalDashboard';
-import { Button } from '@mui/material';
+import DashDocument from '../../DashDocument/DashDocument';
+import { Send } from '@mui/icons-material';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+const drawerWidth = 240;
 
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
+const openedMixin = (theme) => ({
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+    }),
+    overflowX: 'hidden',
+});
 
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
+const closedMixin = (theme) => ({
+    transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: 'hidden',
+    width: `calc(${theme.spacing(7)} + 1px)`,
+    [theme.breakpoints.up('sm')]: {
+        width: `calc(${theme.spacing(8)} + 1px)`,
+    },
+});
 
-function a11yProps(index) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    };
-}
+const DrawerHeader = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+}));
 
+const AppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+    }),
+    ...(open && {
+        marginLeft: drawerWidth,
+        width: `calc(100% - ${drawerWidth}px)`,
+        transition: theme.transitions.create(['width', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+    }),
+}));
+
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+    ({ theme, open }) => ({
+        width: drawerWidth,
+        flexShrink: 0,
+        whiteSpace: 'nowrap',
+        boxSizing: 'border-box',
+        ...(open && {
+            ...openedMixin(theme),
+            '& .MuiDrawer-paper': openedMixin(theme),
+        }),
+        ...(!open && {
+            ...closedMixin(theme),
+            '& .MuiDrawer-paper': closedMixin(theme),
+        }),
+    }),
+);
 
 export default function UserDashboard() {
-    const [value, setValue] = React.useState(0);
+    const theme = useTheme();
+    const [open, setOpen] = useState(false);
+    const [menuData, setMenuData] = useState('NewDoc')
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setOpen(false);
     };
 
     return (
         <>
-            <div className='bg-[#dde2df]'>
+            <div>
                 <Account></Account>
-                <Box
-                    sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: 'auto', height: "100vh", backgroundColor: 'bg-[#93B1A6]' }}
-                    alignItems={'start'}
-                >
-                    <Tabs
-                        orientation="vertical"
-                        // variant="scrollable"
-                        value={value}
-                        onChange={handleChange}
-                        // aria-label="Vertical tabs example"
-                        // sx={{ borderRight: 1, borderColor: 'divider' }}
-                        textColor='bg-[#F1F0E8]'
-                        indicatorColor='secondary'
-                        className='mb-6'
-                        centered
-                        
-                        sx={{ alignItems: 'self-start' }}
+                <Box sx={{ display: 'flex' }}>
+                    <CssBaseline />
+                    <AppBar position="fixed" elevation={4} sx={{ bgcolor: '#ffffff' }}>
+                        <Toolbar>
+                            <IconButton
+                                color="bg-[#B9B4C7]"
+                                aria-label="open drawer"
+                                onClick={() => setOpen(!open)}
+                                edge="start"
+                            // sx={{
+                            //     marginRight: 5,
+                            //     ...(open && { display: 'none' }),
+                            // }}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography variant="h6" noWrap component="div">
+
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <Drawer variant="permanent" open={open}>
+                        <DrawerHeader>
+                            <IconButton onClick={handleDrawerClose}>
+                                {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                            </IconButton>
+                        </DrawerHeader>
+                        <Divider />
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('NewDoc')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<PostAddIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='New Document' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('Inbox')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<InboxIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Inbox' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('Sent')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<Send />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Sent' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('document')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<DocumentScannerIcon/>}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Document' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <Divider />
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('setting')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<SettingsOutlinedIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Setting' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
 
 
-                    >
+                    </Drawer>
+                    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                        <DrawerHeader />
 
-                        <Tab label="New Document" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
-                        <Tab label="Dashboard" {...a11yProps(1)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
-                        <Tab label="Inbox" {...a11yProps(2)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
-                        <Tab label="Sent" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<SendOutlinedIcon />} iconPosition='start' />
-                        <Tab label="Document" {...a11yProps(4)} sx={{ fontSize: 18, }} icon={<DocumentScannerIcon />} iconPosition='start' />
-                        <Tab label="Template" {...a11yProps(5)} sx={{ fontSize: 18, }} icon={<ArticleTwoToneIcon />} iconPosition='start' />
-                        <Tab label="Setting" {...a11yProps(6)} sx={{ fontSize: 18, }} icon={<SettingsOutlinedIcon />} iconPosition='start' />
-                    </Tabs>
-                    <TabPanel value={value} index={0} sx={{ width: 'auto' }} >
-                        <div className='justify-around gap-5 w-full'>
-                            <Drags></Drags>
-                        </div>
-                    </TabPanel>
-                    <TabPanel value={value} index={1} sx={{ width: 'auto' }}>
-                        <div className=' justify-center w-full'>
-                            <Counter></Counter>
-                        </div>
-                    </TabPanel>
-                    <TabPanel value={value} index={2}>
-                        Sent
-                    </TabPanel>
-                    <TabPanel value={value} index={3}>
-                        <div>
+                        {menuData == 'NewDoc' && <Drags></Drags>}
+                        {menuData == 'document' && <DashDocument></DashDocument>}
 
-                            <PersonalDashboard></PersonalDashboard>
-                        </div>
-                    </TabPanel>
-                    <TabPanel value={value} index={4}>
-                        Document
-                    </TabPanel>
-                    <TabPanel value={value} index={5}>
 
-                    </TabPanel>
-                    <TabPanel value={value} index={6}>
-                        Setting
-                    </TabPanel>
-
+                    </Box>
                 </Box>
             </div>
         </>

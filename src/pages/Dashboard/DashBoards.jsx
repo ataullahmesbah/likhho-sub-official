@@ -21,6 +21,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import PersonalDashboard from './PersonalDashboard/PersonalDashboard';
 import Drags from '../DragInAccount/Drags';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -89,7 +90,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function Dash() {
+export default function DashBoards() {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const [menuData, setMenuData] = useState('NewDoc')
@@ -105,17 +106,17 @@ export default function Dash() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar position="fixed" elevation={4} sx={{bgcolor:'#ffffff'}}>
                 <Toolbar>
                     <IconButton
                         color="bg-[#B9B4C7]"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
+                        onClick={()=>setOpen(!open)}
                         edge="start"
-                        sx={{
-                            marginRight: 5,
-                            ...(open && { display: 'none' }),
-                        }}
+                        // sx={{
+                        //     marginRight: 5,
+                        //     ...(open && { display: 'none' }),
+                        // }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -219,6 +220,7 @@ export default function Dash() {
                         </ListItemButton>
                     </ListItem>
                 </List>
+                <Divider />
                 <List>
                     <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('setting')}>
                         <ListItemButton
@@ -237,11 +239,10 @@ export default function Dash() {
                             >
                                 {<MailIcon />}
                             </ListItemIcon>
-                            <ListItemText primary='setting' sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary='Setting' sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                 </List>
-                <Divider />
 
 
             </Drawer>
