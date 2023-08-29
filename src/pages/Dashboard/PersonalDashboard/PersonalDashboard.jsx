@@ -8,7 +8,7 @@ const PersonalDashboard = () => {
 
 
     return (
-        <div className='bg-[#9aa0a3] p-6 lg:ml-8 shadow-black' style={{width:'1280px', height:'70vh'}}>
+        <div className='bg-[#9aa0a3] p-6 lg:ml-8 shadow-black' >
             <h1>DashBoard</h1>
             <div className=''>
                 <div className=''>

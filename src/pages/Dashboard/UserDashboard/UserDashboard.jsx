@@ -20,6 +20,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+
 import PersonalDashboard from '../PersonalDashboard/PersonalDashboard';
 import Drags from '../../DragInAccount/Drags';
 
@@ -156,7 +157,7 @@ export default function UserDashboard() {
                     </ListItem>
                 </List>
                 <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('personal')}>
+                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('Personal')}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -250,8 +251,9 @@ export default function UserDashboard() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
-                {menuData == 'Personal' && <PersonalDashboard></PersonalDashboard> }
                 {menuData == 'NewDoc' && <Drags></Drags> }
+                {menuData == 'Personal' && <PersonalDashboard></PersonalDashboard> }
+
 
             </Box>
         </Box>
