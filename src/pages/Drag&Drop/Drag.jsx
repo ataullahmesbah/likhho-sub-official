@@ -51,9 +51,9 @@ const Drag = () => {
         {/* ... Your content ... */}
 
 
-        <div className="sm:text-left lg:mx-4 xl:mx-28" style={{ fontFamily: 'Roboto, sans-serif' }}>
-          <h6 className="text-3xl sm:text-5xl md:text-4xl md:px-10 text-blue-950 py-4 font-bold">
-            Elevate Your Documents with LIKHO's Free <br /> Online Editing
+        <div className="sm:text-left lg:mx-4 xl:mx-28 ">
+          <h6 className="text-3xl sm:text-5xl md:text-7xl md:px-10 text-gray-200 py-4 font-semibold">
+            Elevate Your Documents with LIKHO's <br /> Free Online Editing
           </h6>
           <p className="md:px-10 py-4">
             <TextAnimation />
@@ -98,18 +98,34 @@ const Drag = () => {
               <div className="flex justify-center items-center mb-4">
                 <RotatingImage className="w-12 h-14" src={wordIcon} alt="" />
               </div>
-              <h4 className="text-4xl text-gray-500 font-bold text-center">
+              <h4 className="text-4xl text-blue-950 font-bold text-center">
                 Drag and drop document here to upload
               </h4>
               <br />
-              <div className="">
-                <Button className=" bg-cyan-800  mb-4" icon={<FaUpload className='text-gray-400' />}>
+
+
+
+              <button className=" mb-4 border-1 shadow-md border-blue-900 hover:border-blue-700 bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg p-2 px-4 text-xs hover:animate-pulse font-semibold text-gray-200 transition-opacity duration-5000" >
+
+                <div className="flex  gap-3 text-center items-center justify-center">
+                <FaUpload className='text-blue-950 text-xl ' />
+
+<span>Click to Upload</span>
+                </div>
+      
+
+              </button>
+
+
+
+              {/* <Button className=" bg-cyan-800  mb-4" icon={<FaUpload  />}>
                   <span className="text-gray-100 font-roboto  ">
                     Click to Upload
                   </span>
-                </Button>
-              </div>
-              <p className="text-gray-700 font-serif font-medium text-center">
+                </Button> */}
+
+
+              <p className="text-gray-700  font-medium text-center">
                 Upload documents of up to 31 MB in PDF, DOC, DOCX, RTF, PPT, PPTX, JPEG, PNG, or TXT
               </p>
             </Upload.Dragger>

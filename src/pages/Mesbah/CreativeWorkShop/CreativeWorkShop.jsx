@@ -9,7 +9,8 @@ const CreativeWorkShop = () => {
                 <div className="space-y-4 text-base ps-10">
                     <p className='text-lg'>
                         Create spreadsheets your teams can easily collaborate <br /> on for free. Powered by an automated data processor, <br /> an AI-assisted data analyst, and 1,000+ integration <br /> possibilities, Likho Sheet makes data handling easier <br /> and more effective.</p>
-                    <button className='border-2 border-red-700 bg-red-800 rounded-lg p-2 px-4 font-semibold'>Access Likho</button>
+                        <button className="border-1 shadow-md border-blue-900 hover:border-blue-700 bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg p-2 px-4 text-2xl hover:animate-pulse font-semibold text-gray-200 transition-opacity duration-5000">Access Likho</button>
+
                 </div>
 
 
