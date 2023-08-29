@@ -29,11 +29,11 @@ const ProductsLevelUI = () => {
           {/* Left side */}
 
           <div className="space-y-3 mb-6">
-            <h2 className='text-blue-700 font-bold text-xl '>Produces</h2>
+            <h2 className='text-blue-700 font-bold text-xl'>Produces</h2>
             <h4 className='text-gray-500 font-bold text-4xl '>Every Essential Tool Prepared <br /> <span className='text-blue-600 font-bold text-4xl'>ready for production</span></h4>
             <p>Build with Remarkable Speed, All While Maintaining Complete Flexibility and Control.</p>
 
-            <div className="w-full  p-4 space-y-2">
+            <div className="w-full  p-4 space-y-3">
               {pointsData.map((point) => (
                 <div
                   key={point._id}
