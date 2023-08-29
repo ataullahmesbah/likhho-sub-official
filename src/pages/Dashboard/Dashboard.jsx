@@ -14,7 +14,7 @@ const Dashboard = () => {
 
 
 
-    console.log(useAdmins, useUsers, user.email)
+    console.log(useAdmins, useUsers, user?.email)
 
 
 

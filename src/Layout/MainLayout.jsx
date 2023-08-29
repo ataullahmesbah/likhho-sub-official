@@ -7,7 +7,7 @@ const MainLayout = () => {
 
 
     const noHeaderFooter = location.pathname.includes('dashboard') || location.pathname.includes('editor')
-    const noFooter = location.pathname.includes('dash')
+    const noFooter = location.pathname.includes('dashboard')
 
     return (
         <div>
