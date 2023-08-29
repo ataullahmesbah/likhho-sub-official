@@ -19,10 +19,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
-
-import PersonalDashboard from '../PersonalDashboard/PersonalDashboard';
+import Account from '../../Account/Account'
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
 import Drags from '../../DragInAccount/Drags';
+import DashDocument from '../../DashDocument/DashDocument';
+import { Send } from '@mui/icons-material';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 
 const drawerWidth = 240;
@@ -106,156 +109,161 @@ export default function UserDashboard() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" elevation={4} sx={{bgcolor:'#ffffff'}}>
-                <Toolbar>
-                    <IconButton
-                        color="bg-[#B9B4C7]"
-                        aria-label="open drawer"
-                        onClick={()=>setOpen(!open)}
-                        edge="start"
-                        // sx={{
-                        //     marginRight: 5,
-                        //     ...(open && { display: 'none' }),
-                        // }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                       
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('NewDoc')}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
+        <>
+            <div>
+                <Account></Account>
+                <Box sx={{ display: 'flex' }}>
+                    <CssBaseline />
+                    <AppBar position="fixed" elevation={4} sx={{ bgcolor: '#ffffff' }}>
+                        <Toolbar>
+                            <IconButton
+                                color="bg-[#B9B4C7]"
+                                aria-label="open drawer"
+                                onClick={() => setOpen(!open)}
+                                edge="start"
+                            // sx={{
+                            //     marginRight: 5,
+                            //     ...(open && { display: 'none' }),
+                            // }}
                             >
-                                {<MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary='New Document' sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                </List>
-                <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('Personal')}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                {<MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary='Personal' sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                </List>
-                <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('Inbox')}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                {<MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary='Inbox' sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                </List>
-                <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('Sent')}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                {<MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary='Sent' sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                </List>
-                <Divider />
-                <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>setMenuData('setting')}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                {<MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary='Setting' sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                </List>
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography variant="h6" noWrap component="div">
+
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <Drawer variant="permanent" open={open}>
+                        <DrawerHeader>
+                            <IconButton onClick={handleDrawerClose}>
+                                {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                            </IconButton>
+                        </DrawerHeader>
+                        <Divider />
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('NewDoc')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<PostAddIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='New Document' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('Inbox')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<InboxIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Inbox' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('Sent')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<Send />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Sent' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('document')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<DocumentScannerIcon/>}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Document' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                        <Divider />
+                        <List>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('setting')}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                    }}
+                                >
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {<SettingsOutlinedIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary='Setting' sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
 
 
-            </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />
+                    </Drawer>
+                    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                        <DrawerHeader />
 
-                {menuData == 'NewDoc' && <Drags></Drags> }
-                {menuData == 'Personal' && <PersonalDashboard></PersonalDashboard> }
+                        {menuData == 'NewDoc' && <Drags></Drags>}
+                        {menuData == 'document' && <DashDocument></DashDocument>}
 
 
-            </Box>
-        </Box>
+                    </Box>
+                </Box>
+            </div>
+        </>
     );
 }

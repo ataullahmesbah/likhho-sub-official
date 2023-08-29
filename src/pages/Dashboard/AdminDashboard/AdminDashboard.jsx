@@ -19,8 +19,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import PersonalDashboard from '../PersonalDashboard/PersonalDashboard';
 import Drags from '../../DragInAccount/Drags';
+import DashDocument from '../../DashDocument/DashDocument';
 
 
 const drawerWidth = 240;
@@ -249,7 +249,7 @@ export default function AdminDashBoard() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
-                {menuData == 'Personal' && <PersonalDashboard></PersonalDashboard> }
+                {menuData == 'Personal' && <DashDocument></DashDocument> }
                 {menuData == 'NewDoc' && <Drags></Drags> }
 
             </Box>
