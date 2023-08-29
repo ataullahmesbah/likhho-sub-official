@@ -61,7 +61,7 @@ export default function UserDashboard() {
 
     return (
         <>
-            <div className='bg-[#93B1A6]'>
+            <div className='bg-[#dde2df]'>
                 <Account></Account>
                 <Box
                     sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: 'auto', height: "100vh", backgroundColor: 'bg-[#93B1A6]' }}
@@ -74,19 +74,17 @@ export default function UserDashboard() {
                         onChange={handleChange}
                         // aria-label="Vertical tabs example"
                         // sx={{ borderRight: 1, borderColor: 'divider' }}
-                        textColor='bg-[#]'
+                        textColor='bg-[#F1F0E8]'
                         indicatorColor='secondary'
                         className='mb-6'
                         centered
-
+                        
                         sx={{ alignItems: 'self-start' }}
 
 
                     >
 
-                        <Button color='primary'>
-                            <Tab label="New Document" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
-                        </Button>
+                        <Tab label="New Document" {...a11yProps(0)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
                         <Tab label="Dashboard" {...a11yProps(1)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<HomeIcon color="primary" />} iconPosition='start' />
                         <Tab label="Inbox" {...a11yProps(2)} sx={{ fontSize: 18, width: 'BiFullscreen' }} icon={<ForwardToInboxIcon />} iconPosition='start' />
                         <Tab label="Sent" {...a11yProps(3)} sx={{ fontSize: 18, }} icon={<SendOutlinedIcon />} iconPosition='start' />
@@ -96,7 +94,7 @@ export default function UserDashboard() {
                     </Tabs>
                     <TabPanel value={value} index={0} sx={{ width: 'auto' }} >
                         <div className='justify-around gap-5 w-full'>
-                            <PersonalDashboard></PersonalDashboard>
+                            <Drags></Drags>
                         </div>
                     </TabPanel>
                     <TabPanel value={value} index={1} sx={{ width: 'auto' }}>
@@ -109,14 +107,18 @@ export default function UserDashboard() {
                     </TabPanel>
                     <TabPanel value={value} index={3}>
                         <div>
-                            <Drags></Drags>
+
+                            <PersonalDashboard></PersonalDashboard>
                         </div>
                     </TabPanel>
                     <TabPanel value={value} index={4}>
-                        Template
+                        Document
                     </TabPanel>
                     <TabPanel value={value} index={5}>
-                        FAQ
+
+                    </TabPanel>
+                    <TabPanel value={value} index={6}>
+                        Setting
                     </TabPanel>
 
                 </Box>

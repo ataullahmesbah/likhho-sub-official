@@ -15,6 +15,7 @@ import ForgotPassword from "../pages/Home/ForgotPassword/ForgotPassword";
 import UpdateProfile from "../pages/Profile/UpdateProfile";
 import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
 import Blog from "../pages/shared/Blog/Blog";
+import Dash from "../pages/Dashboard/Dash";
 
 
 
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path:'dash',
+        element:<Dash></Dash>
       }
     ]
   },

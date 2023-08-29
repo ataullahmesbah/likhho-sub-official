@@ -36,7 +36,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className=" z-[30] menu menu-sm dropdown-content mt-3 p-2 shadow bg-violet-200 rounded-box w-52"
+                className=" z-[30] menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#749BC2] rounded-box w-52"
               >
                 <li>
                   <Link>Home</Link>
@@ -135,7 +135,7 @@ const Navbar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[30] p-2 shadow bg-violet-200 rounded-box w-52 space-y-1"
+                    className="menu menu-sm dropdown-content mt-3 z-[30] p-2 shadow bg-[#749BC2] rounded-box w-52 space-y-1"
                   >
                     <Link
                       to="/profile"

@@ -7,6 +7,7 @@ const saveUser = (user) => {
         email: user.email,
         // name:user.name,
         role: "user",
+        name: user.displayName
     }
 
     axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)

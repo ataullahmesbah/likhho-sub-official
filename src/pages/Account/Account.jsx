@@ -5,6 +5,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import MailIcon from '@mui/icons-material/Mail';
+import { Link } from 'react-router-dom';
 
 
 const Account = () => {
@@ -20,7 +21,7 @@ const Account = () => {
                 </div>
             </div>
             <div className='grid justify-start items-center  '>
-                <h1 className='text-2xl font-serif font-bold'><span className='text-sky-500'>L</span>ikho</h1>
+                <h1 className='text-2xl font-serif font-bold'><span className='text-sky-500'>L</span><Link to={'/'}>ikho</Link> </h1>
             </div>
             <div className='flex justify-end items-center gap-2 mr-5'>
                 <h3> <button className='py-1 px-2 bg-[#0284C7] text-white text-xs rounded-md'>UPGRADE </button> </h3>
