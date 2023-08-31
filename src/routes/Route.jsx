@@ -102,10 +102,7 @@ const router = createBrowserRouter([
         path: 'blog',
         element: <Blog></Blog>
       },
-      {
-        path: 'createblog',
-        element: <CreateBlog></CreateBlog>
-      },
+      
       {
         path:'dash',
         element:''
