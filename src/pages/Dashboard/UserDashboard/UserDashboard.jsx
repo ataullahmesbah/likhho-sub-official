@@ -114,12 +114,12 @@ export default function UserDashboard() {
                 <Account></Account>
                 <Box sx={{ display: 'flex' }}>
                     <CssBaseline />
-                    <AppBar position="fixed" elevation={4} sx={{ bgcolor: '#ffffff' }}>
+                    <AppBar position="fixed" open={open} elevation={4} sx={{ bgcolor: '#ffffff' }}>
                         <Toolbar>
                             <IconButton
                                 color="bg-[#B9B4C7]"
                                 aria-label="open drawer"
-                                onClick={() => setOpen(!open)}
+                                onClick={handleDrawerOpen}
                                 edge="start"
                             // sx={{
                             //     marginRight: 5,
@@ -129,7 +129,7 @@ export default function UserDashboard() {
                                 <MenuIcon />
                             </IconButton>
                             <Typography variant="h6" noWrap component="div">
-
+                            <img src="https://img.freepik.com/free-vector/closeup-fountain-pen-writing-signature-realistic_1284-13522.jpg?w=740&t=st=1693322281~exp=1693322881~hmac=3df5ea535b3b0a22dec14fc1310a7ce799f8759eade6d6e60cceaf235d29b8b0" className='w-8 h-8' alt="editor" />
                             </Typography>
                         </Toolbar>
                     </AppBar>
