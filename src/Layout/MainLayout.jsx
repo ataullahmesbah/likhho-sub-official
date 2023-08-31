@@ -6,8 +6,8 @@ import Footer from "../pages/shared/Footer";
 const MainLayout = () => {
 
 
-    const noHeaderFooter = location.pathname.includes('dashboard') || location.pathname.includes('editor')
-    const noFooter = location.pathname.includes('dashboard')
+    const noHeaderFooter = location.pathname.includes('dashboard') || location.pathname.includes('editor')||location.pathname.includes('rich')
+    const noFooter = location.pathname.includes('dashboard')||location.pathname.includes('rich')
 
     return (
         <div>

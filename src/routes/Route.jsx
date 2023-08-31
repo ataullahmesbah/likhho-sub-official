@@ -20,6 +20,7 @@ import DashBoardSent from "../pages/Dashboard/DashBoardSent/DashBoardSent";
 import DashBoardInbox from "../pages/Dashboard/DashBoardInbox/DashBoardInbox";
 import DashBoardTemplate from "../pages/Dashboard/DashBoardTemplate/DashBoardTemplate";
 import DashDocument from "../pages/DashDocument/DashDocument";
+import CustomEditor from "../pages/Dashboard/PersonalDashboard/CustomEditor/CustomEditor";
 
 
 
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
         path: '/profile',
         element: <ProfileDetails></ProfileDetails>
       },
+      {
+        path: '/rich',
+        element: <CustomEditor></CustomEditor>
+      },
+      
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
