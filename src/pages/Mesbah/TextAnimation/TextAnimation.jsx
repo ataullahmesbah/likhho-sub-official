@@ -22,12 +22,12 @@ const TextAnimation = () => {
 
 
         <h2 className="text-4xl font-bold text-white">
-          <span className="text-[#a7e633]">{text}</span>
+          <span className="text-[#e8ebee]">{text}</span>
           {/* <span className="text-[#ff014f]">{text}</span> */}
           <Cursor
             cursorBlinking="false"
             cursorStyle="|"
-            cursorColor="#ff014f"
+            cursorColor="#408ed6"
           />
         </h2>
 

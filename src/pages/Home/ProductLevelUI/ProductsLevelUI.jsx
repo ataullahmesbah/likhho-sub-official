@@ -30,7 +30,7 @@ const ProductsLevelUI = () => {
 
           <div className="space-y-3 mb-6">
             <h2 className='text-blue-700 font-bold text-xl'>Produces</h2>
-            <h4 className='text-gray-500 font-bold text-4xl '>Every Essential Tool Prepared <br /> <span className='text-blue-600 font-bold text-4xl'>ready for production</span></h4>
+            <h4 className='text-blue-950 font-bold text-4xl '>Every Essential Tool Prepared <br /> <span className='text-blue-600 font-bold text-4xl'>ready for production</span></h4>
             <p>Build with Remarkable Speed, All While Maintaining Complete Flexibility and Control.</p>
 
             <div className="w-full  p-4 space-y-3">
@@ -47,7 +47,7 @@ const ProductsLevelUI = () => {
 
 
                   <div className="space-y-2 py-2 text-lg font-sans">
-                    <h2 className="font-bold text-gray-800">{point.title}</h2>
+                    <h2 className="font-bold text-blue-950">{point.title}</h2>
                     <p className="text-gray-700">{point.description}</p>
                     <p className="flex items-center gap-2 text-blue-800 font-bold text-xs">
                       Learn More <FaChevronRight className="text-xs" />
