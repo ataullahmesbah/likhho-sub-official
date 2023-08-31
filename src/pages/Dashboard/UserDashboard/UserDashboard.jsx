@@ -26,6 +26,12 @@ import Drags from '../../DragInAccount/Drags';
 import DashDocument from '../../DashDocument/DashDocument';
 import { Send } from '@mui/icons-material';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import DashBoardSent from '../DashBoardSent/DashBoardSent';
+import { Avatar } from '@mui/material';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import MyProfile from '../../Profile/MyProfile';
+import UpdateProfile from '../../Profile/UpdateProfile';
 
 
 const drawerWidth = 240;
@@ -100,6 +106,8 @@ export default function UserDashboard() {
     const [open, setOpen] = useState(false);
     const [menuData, setMenuData] = useState('NewDoc')
 
+    const {user } = useContext(AuthContext)
+
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -128,8 +136,16 @@ export default function UserDashboard() {
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Typography variant="h6" noWrap component="div">
-                            <img src="https://img.freepik.com/free-vector/closeup-fountain-pen-writing-signature-realistic_1284-13522.jpg?w=740&t=st=1693322281~exp=1693322881~hmac=3df5ea535b3b0a22dec14fc1310a7ce799f8759eade6d6e60cceaf235d29b8b0" className='w-8 h-8' alt="editor" />
+                            <Typography variant="h6" noWrap component="div" sx={{height:60, m:3}}>
+                                <div className='lg:flex'>
+                                    <div>
+                                        <Avatar alt="Cindy Baker" src={user?.photoURL} />
+                                    </div>
+                                    <div className='text-black ml-4'>
+                                        <div>{user?.displayName}</div>
+                                        <div>{user?.email}</div>
+                                    </div>
+                                </div>
                             </Typography>
                         </Toolbar>
                     </AppBar>
@@ -185,7 +201,7 @@ export default function UserDashboard() {
                             </ListItem>
                         </List>
                         <List>
-                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('Sent')}>
+                            <ListItem disablePadding sx={{ display: 'block' }} onClick={() => setMenuData('sent')}>
                                 <ListItemButton
                                     sx={{
                                         minHeight: 48,
@@ -222,7 +238,7 @@ export default function UserDashboard() {
                                             justifyContent: 'center',
                                         }}
                                     >
-                                        {<DocumentScannerIcon/>}
+                                        {<DocumentScannerIcon />}
                                     </ListItemIcon>
                                     <ListItemText primary='Document' sx={{ opacity: open ? 1 : 0 }} />
                                 </ListItemButton>
@@ -259,6 +275,8 @@ export default function UserDashboard() {
 
                         {menuData == 'NewDoc' && <Drags></Drags>}
                         {menuData == 'document' && <DashDocument></DashDocument>}
+                        {menuData == 'sent' && <DashBoardSent></DashBoardSent>}
+                        {menuData == 'setting' && <UpdateProfile></UpdateProfile> }
 
 
                     </Box>

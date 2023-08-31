@@ -26,7 +26,7 @@ import { Link } from 'react-router-dom';
 const Drags = () => {
     return (
         <div>
-            <div>
+            <div className='lg:ml:20'>
 
                 <h1 className='text-3xl'>Create New Document</h1>
                 <hr className='my-5'/>
