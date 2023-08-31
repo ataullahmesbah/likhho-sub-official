@@ -111,6 +111,9 @@ const Navbar = () => {
               <li>
                   <Link to='/blog'>Blog</Link>
                 </li>
+              <li>
+                  <Link to='/createblog'>Create Blog</Link>
+                </li>
             </ul>
           </div>
           <div className="navbar-end ml-4 ">

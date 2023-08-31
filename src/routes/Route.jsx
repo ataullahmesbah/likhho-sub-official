@@ -20,6 +20,7 @@ import DashBoardSent from "../pages/Dashboard/DashBoardSent/DashBoardSent";
 import DashBoardInbox from "../pages/Dashboard/DashBoardInbox/DashBoardInbox";
 import DashBoardTemplate from "../pages/Dashboard/DashBoardTemplate/DashBoardTemplate";
 import DashDocument from "../pages/DashDocument/DashDocument";
+import CreateBlog from "../pages/CreateBlog/CreateBlog";
 
 
 
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: 'createblog',
+        element: <CreateBlog></CreateBlog>
       },
       {
         path:'dash',
