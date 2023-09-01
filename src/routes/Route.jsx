@@ -21,6 +21,8 @@ import DashBoardInbox from "../pages/Dashboard/DashBoardInbox/DashBoardInbox";
 import DashBoardTemplate from "../pages/Dashboard/DashBoardTemplate/DashBoardTemplate";
 import DashDocument from "../pages/DashDocument/DashDocument";
 import CustomEditor from "../pages/Dashboard/PersonalDashboard/CustomEditor/CustomEditor";
+import Drag from "../pages/Drag&Drop/Drag";
+import Drags from "../pages/DragInAccount/Drags";
 
 
 
@@ -75,6 +77,7 @@ const router = createBrowserRouter([
             path:'inbox',
             element:<DashBoardInbox></DashBoardInbox>
           },
+          
           {
             path:'sent',
             element:<DashBoardSent></DashBoardSent>
