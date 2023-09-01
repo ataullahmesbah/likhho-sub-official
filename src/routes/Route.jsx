@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import MainLayout from "../Layout/MainLayout";
-import Navbar from "../Navbar/Navbar";
+
 
 
 import LogIn from "../pages/LogIn/LogIn";
@@ -25,6 +25,7 @@ import Drag from "../pages/Drag&Drop/Drag";
 import Drags from "../pages/DragInAccount/Drags";
 import VideoHomepage from "../pages/VideoChat/VideoHomepage";
 import VideoRoompage from "../pages/VideoChat/VideoRoompage";
+import Navbar from "../pages/Navbar/Navbar";
 
 
 
