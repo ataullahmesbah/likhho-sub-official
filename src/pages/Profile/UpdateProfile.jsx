@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+
 import { AuthContext } from '../Providers/AuthProvider';
 
 const UpdateProfile = () => {
 
     const { user } = useContext(AuthContext)
-
-
     const [dbUser, setDbUser] = useState({});
 
 
@@ -27,8 +25,7 @@ const UpdateProfile = () => {
         const birthday = form.birthday.value;
         const gender = form.gender.value;
         const email = form.email.value;
-
-        const updatedProfile = { name, phone, birthday, gender,email }
+        const updatedProfile = { name, phone, birthday, gender, email }
         console.log(updatedProfile);
 
 
@@ -75,7 +72,7 @@ const UpdateProfile = () => {
 
                                         <input type="text" name="name" defaultValue={dbUser?.name} placeholder="name" className="p-3 rounded-sm w-full" />
                                     </label>
- 
+
                                 </div>
 
                                 <div className="form-control ">
@@ -86,7 +83,7 @@ const UpdateProfile = () => {
 
                                         <input type="text" name="email" defaultValue={dbUser?.email} placeholder="email" className="p-3 rounded-sm w-full" />
                                     </label>
- 
+
                                 </div>
 
 
@@ -104,34 +101,34 @@ const UpdateProfile = () => {
 
 
                             <div className='flex gap-4 mb-4'>
-                            <div className="form-control ">
-                                <label className="label">
-                                    <span className="label-text text-lg font-bold">Birthday</span>
-                                </label>
-                                <label className="">
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Birthday</span>
+                                    </label>
+                                    <label className="">
 
-                                    <input type="text" name="birthday" defaultValue={dbUser?.birthday} placeholder="birthday" className="p-3 rounded-sm w-full" />
-                                </label>
+                                        <input type="text" name="birthday" defaultValue={dbUser?.birthday} placeholder="birthday" className="p-3 rounded-sm w-full" />
+                                    </label>
 
-                            </div>
+                                </div>
 
-                            <div className="form-control ">
-                                <label className="label">
-                                    <span className="label-text text-lg font-bold">Gender</span>
-                                </label>
-                                <label className="">
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Gender</span>
+                                    </label>
+                                    <label className="">
 
-                                    <input type="text" name="gender" defaultValue={dbUser?.gender} placeholder="gender" className="p-3 rounded-sm w-full" />
-                                </label>
+                                        <input type="text" name="gender" defaultValue={dbUser?.gender} placeholder="gender" className="p-3 rounded-sm w-full" />
+                                    </label>
 
+                                </div>
                             </div>
                         </div>
-                        </div>
 
 
 
-                        <div className='form-control text' style={{ width: '40%' }}>
-                            <input type="submit" value="Update" className="btn   bg-blue-300" />
+                        <div className='form-control' style={{ width: '10%' }}>
+                            <input type="submit" value="Update" className="btn-sm  bg-success" />
 
                         </div>
 
