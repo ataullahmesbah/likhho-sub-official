@@ -23,6 +23,8 @@ import DashDocument from "../pages/DashDocument/DashDocument";
 import CustomEditor from "../pages/Dashboard/PersonalDashboard/CustomEditor/CustomEditor";
 import Drag from "../pages/Drag&Drop/Drag";
 import Drags from "../pages/DragInAccount/Drags";
+import VideoHomepage from "../pages/VideoChat/VideoHomepage";
+import VideoRoompage from "../pages/VideoChat/VideoRoompage";
 
 
 
@@ -113,6 +115,14 @@ const router = createBrowserRouter([
       {
         path:'dash',
         element:''
+      },
+      {
+        path:"/room",
+        element: <VideoHomepage></VideoHomepage>
+      },
+      {
+        path: "/room/:roomID",
+        element: <VideoRoompage></VideoRoompage>
       }
     ]
   },
