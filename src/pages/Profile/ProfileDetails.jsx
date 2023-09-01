@@ -4,7 +4,7 @@ import MyProfile from './MyProfile';
 const ProfileDetails = () => {
     return (
         <div className='py-20 flex justify-center items-center'>
-            <MyProfile></MyProfile>
+            {/* <MyProfile></MyProfile> */}
         </div>
     );
 };

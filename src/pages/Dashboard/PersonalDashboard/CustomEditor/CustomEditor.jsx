@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-
+import './EditorStyles.css'
+import axios from 'axios';
 function CustomEditor() {
     const [editorHtml, setEditorHtml] = useState('');
+    // const [selectedFile, setSelectedFile] = useState(null);
+
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     let synth = null;
 
@@ -29,26 +32,86 @@ function CustomEditor() {
         }
     };
 
-    const handleInsertFile = () => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = 'image/*'; // Adjust accepted file types as needed
+    // for formating
+    const handleFileSelection = (event) => {
+        const file = event.target.files[0];
 
-        input.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const imageUrl = URL.createObjectURL(file);
-                const imageElement = `<img src="${imageUrl}" alt="Inserted File" />`;
-                setEditorHtml(editorHtml + imageElement);
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const fileContent = e.target.result;
+
+            // Wrap the file content with HTML tags for basic formatting
+            const formattedContent = `<div>${fileContent}</div>`;
+
+            setEditorHtml(formattedContent);
+        };
+        reader.readAsText(file);
+        
+  
+};
+      
+
+    const handleDownload = () => {
+        const blob = new Blob([editorHtml], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'edited_file.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    const handleShare = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Shared File',
+                    text: 'Check out this file',
+                    url: window.location.href,
+                });
+            } catch (error) {
+                console.error('Error sharing:', error);
             }
-        });
+        } else {
+            console.log('Web Share API not supported in this browser.');
+        }
+    };
+    const handleDocxToPdfConversion = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('document', selectedFile);
 
-        input.click();
+            const response = await axios.post('http://localhost:5000/convert/docx2pdf', formData, {
+                responseType: 'arraybuffer',
+            });
+
+            const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
+            const pdfUrl = URL.createObjectURL(pdfBlob);
+
+            window.open(pdfUrl);
+        } catch (error) {
+            console.error('Error converting document to PDF:', error);
+        }
     };
 
-    const handleChange = (html) => {
-        setEditorHtml(html);
+    const handleTextToPdfConversion = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/convert/text2pdf', { text: editorHtml }, {
+                responseType: 'arraybuffer',
+            });
+
+            const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
+            const pdfUrl = URL.createObjectURL(pdfBlob);
+
+            window.open(pdfUrl);
+        } catch (error) {
+            console.error('Error converting text to PDF:', error);
+        }
     };
+
+
 
     const quillModules = {
         toolbar: [
@@ -68,16 +131,22 @@ function CustomEditor() {
 
     return (
         <div>
-            <button onClick={handleVoiceButtonClick}>Start Voice</button>
-            <button onClick={handleReadAloud}>Read Aloud</button>
-            <button onClick={handleInsertFile}>File</button>
+            
+            <button className='px-2' onClick={handleVoiceButtonClick}>Start Voice</button>
+            <button className='px-2'  onClick={handleReadAloud}>Read Aloud</button>
+             <input type="file" accept=".txt" onChange={handleFileSelection} />
+            <button className='px-2'  onClick={handleDownload}>Download</button>
+            <button className='px-2'  onClick={handleShare}>Share</button>
+            <button className='px-2'  onClick={handleDocxToPdfConversion}> Docx to PDF</button>
+            <button className='px-2'  onClick={handleTextToPdfConversion}>Text to PDF</button>
 
-            <ReactQuill
+            <ReactQuill 
                 value={editorHtml}
-                onChange={handleChange}
+                onChange={setEditorHtml}
                 modules={quillModules}
                 formats={quillFormats}
             />
+
         </div>
     );
 }
