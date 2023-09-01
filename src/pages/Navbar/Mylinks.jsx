@@ -9,7 +9,7 @@ export const links = [
         Head: "LikhoEditor 7.1 Overview",
         sublink: [
           { icon: <FaHockeyPuck />, name: "Products Tour", link: "/" },
-          { icon: <FaEdit />, name: "Features", link: "/" },
+          { icon: <FaEdit />, name: "Features", link: "/features" },
           { name: "Demo Pages", link: "/" },
           { name: "Online Builder", link: "/" },
           { name: "Documentation", link: "/" },
