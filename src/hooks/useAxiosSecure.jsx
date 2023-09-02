@@ -7,7 +7,7 @@ import { AuthContext } from '../pages/Providers/AuthProvider';
 
 
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:5173/"
+    baseURL: "https://likho-7e3d6.web.app"
 })
 
 const useAxiosSecure = () => {
