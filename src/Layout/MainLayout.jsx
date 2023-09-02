@@ -10,7 +10,7 @@ const MainLayout = () => {
     ||location.pathname.includes('rich')  ||location.pathname.includes('updateProfile') 
     
     const noFooter = location.pathname.includes('dashboard')||location.pathname.includes('rich')||location.pathname.includes('updateProfile') 
-
+    || location.pathname.includes('editor')
     return (
         <div>
            { noHeaderFooter || <Navbar></Navbar>}

@@ -52,7 +52,7 @@ const UpdateProfile = () => {
     return (
         <div className=" h-screen  flex justify-center items-center ">
 
-            <div className=' text-center pt-4 border bg-green-100'>
+            <div className=' text-center pt-4 border bg-gray-200'>
                 <h2 className='text-3xl pb-4 '>Profile</h2>
                 <div className='flex gap-16 p-8 '>
                     <div className='flex flex-col p-4 '>
