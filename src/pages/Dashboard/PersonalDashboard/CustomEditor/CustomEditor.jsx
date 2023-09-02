@@ -83,7 +83,7 @@ function CustomEditor() {
             const formData = new FormData();
             formData.append('document', selectedFile);
 
-            const response = await axios.post('http://localhost:5000/convert/docx2pdf', formData, {
+            const response = await axios.post('https://likho-arbayezid.vercel.app/convert/docx2pdf', formData, {
                 responseType: 'arraybuffer',
             });
 
@@ -98,7 +98,7 @@ function CustomEditor() {
 
     const handleTextToPdfConversion = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/convert/text2pdf', { text: editorHtml }, {
+            const response = await axios.post('https://likho-arbayezid.vercel.app/convert/text2pdf', { text: editorHtml }, {
                 responseType: 'arraybuffer',
             });
 

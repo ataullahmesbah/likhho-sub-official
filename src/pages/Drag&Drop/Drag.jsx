@@ -53,7 +53,7 @@ const Drag = () => {
 
         <div className="sm:text-left lg:mx-4 xl:mx-28 ">
           <h6 className="text-3xl sm:text-5xl md:text-7xl md:px-10 text-gray-200 py-4 font-semibold">
-            Elevate Your Documents with LIKHO's <br /> Free Online Editing
+            Elevate Your Documents with LIKHOs <br /> Free Online Editing
           </h6>
           <p className="md:px-10 py-4">
             <TextAnimation />
