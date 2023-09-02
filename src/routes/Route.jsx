@@ -65,7 +65,7 @@ const router = createBrowserRouter([
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
-        loader: ({params}) => fetch(`https://likho-arbayezid.vercel.app/users/${params.id}`)
+        loader: ({params}) => fetch(`https://likho-backend.vercel.app/users/${params.id}`)
       },
       {
         path:'/dashboard',
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
         path: "/updateProfile/:id",
         element: <UpdateProfile></UpdateProfile>,
         loader:({params})=>
-        fetch(`https://likho-arbayezid.vercel.app/users/${params.id}`)
+        fetch(`https://likho-backend.vercel.app/users/${params.id}`)
 },
        { path:"/chat",
         element: <ChatContainer></ChatContainer>

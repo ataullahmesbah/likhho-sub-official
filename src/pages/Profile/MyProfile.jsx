@@ -19,7 +19,7 @@ const MyProfile = () => {
 
 
     // useEffect(() => {
-    //     fetch(`https://likho-arbayezid.vercel.app/users?email=${user?.email}`)
+    //     fetch(`https://likho-backend.vercel.app/users?email=${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => setDbUser(data)
             
