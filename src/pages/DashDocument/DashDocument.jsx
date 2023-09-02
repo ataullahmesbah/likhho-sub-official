@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
-import { FcDocument } from "react-icons/fc";
+// import { FcDocument } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const DashDocument = () => {
@@ -19,7 +19,7 @@ const DashDocument = () => {
                         <div className=''>
                             <div className='grid text-xl lg:grid-cols-3 p-6 '>
                                 <div className='inline-flex items-center gap-2'>
-                                    <FcDocument></FcDocument>
+                                    {/* <FcDocument></FcDocument> */}
                                     <Link>Document</Link>
                                 </div>
                                 <p>{user.displayName}</p>
@@ -30,7 +30,7 @@ const DashDocument = () => {
                         <hr className='bg-black max-w-full' />
                         <div className='grid text-xl lg:grid-cols-3 p-6 '>
                             <div className='inline-flex items-center gap-2'>
-                                <FcDocument></FcDocument>
+                                {/* <FcDocument></FcDocument> */}
                                 <Link>Document</Link>
                             </div>
                             <p>{user.displayName}</p>
@@ -39,7 +39,7 @@ const DashDocument = () => {
                         <hr className='bg-black max-w-full' />
                         <div className='grid text-xl lg:grid-cols-3 p-6 '>
                             <div className='inline-flex items-center gap-2'>
-                                <FcDocument></FcDocument>
+                                {/* <FcDocument></FcDocument> */}
                                 <Link>Document</Link>
                             </div>
                             <p>{user.displayName}</p>
