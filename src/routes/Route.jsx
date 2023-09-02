@@ -20,6 +20,11 @@ import DashBoardSent from "../pages/Dashboard/DashBoardSent/DashBoardSent";
 import DashBoardInbox from "../pages/Dashboard/DashBoardInbox/DashBoardInbox";
 import DashBoardTemplate from "../pages/Dashboard/DashBoardTemplate/DashBoardTemplate";
 import DashDocument from "../pages/DashDocument/DashDocument";
+import CustomEditor from "../pages/Dashboard/PersonalDashboard/CustomEditor/CustomEditor";
+import Drag from "../pages/Drag&Drop/Drag";
+import Drags from "../pages/DragInAccount/Drags";
+import VideoHomepage from "../pages/VideoChat/VideoHomepage";
+import VideoRoompage from "../pages/VideoChat/VideoRoompage";
 
 
 
@@ -50,8 +55,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <ProfileDetails></ProfileDetails>
+        element: <UpdateProfile></UpdateProfile>
       },
+      {
+        path: '/rich',
+        element: <CustomEditor></CustomEditor>
+      },
+      
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
@@ -69,6 +79,7 @@ const router = createBrowserRouter([
             path:'inbox',
             element:<DashBoardInbox></DashBoardInbox>
           },
+          
           {
             path:'sent',
             element:<DashBoardSent></DashBoardSent>
@@ -104,6 +115,14 @@ const router = createBrowserRouter([
       {
         path:'dash',
         element:''
+      },
+      {
+        path:"/room",
+        element: <VideoHomepage></VideoHomepage>
+      },
+      {
+        path: "/room/:roomID",
+        element: <VideoRoompage></VideoRoompage>
       }
     ]
   },

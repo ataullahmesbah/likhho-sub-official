@@ -1,21 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {  Link, useParams } from 'react-router-dom';
+
 import { AuthContext } from '../Providers/AuthProvider';
 
 const UpdateProfile = () => {
-    // const allUser = useLoaderData()
+
     const { user } = useContext(AuthContext)
-    // console.log("all user",allUser);
-    
-    const {id} = useParams();
-    const [dbUser,setDbUser]=useState({});
+    const [dbUser, setDbUser] = useState({});
 
 
     useEffect(() => {
-        fetch(`https://likho-backend.vercel.app/users/${user?.email}`)
+        fetch(`https://likho-arbayezid.vercel.app/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setDbUser(data)
-            
+
             )
     }, [user])
     console.log(dbUser);
@@ -24,82 +21,125 @@ const UpdateProfile = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const phone=form.phone.value;
-       
-       
-
-        const updatedProfile = {name,phone }
-         console.log(updatedProfile);
+        const phone = form.phone.value;
+        const birthday = form.birthday.value;
+        const gender = form.gender.value;
+        const email = form.email.value;
+        const updatedProfile = { name, phone, birthday, gender, email }
+        console.log(updatedProfile);
 
 
 
         // send data to server
-        fetch(`https://likho-backend.vercel.app/users/${id}`,{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
+        fetch(`https://likho-arbayezid.vercel.app/users/${dbUser?._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(updatedProfile)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.modifiedCount > 0){
-               
-                alert("Update Successfully");
-            }
-        })
-         console.log(updatedProfile);
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+
+                    alert("Update Successfully");
+                }
+            })
+        console.log(updatedProfile);
 
     }
     return (
-        <div className="flex justify-center item-center border px-20 py-8  bg-blue-50 ">
-           
-            <div className=' text-center mt-8'>
-            <h2 className='text-3xl font-semibold mb-5 '>Update Profile</h2>
-            <form onSubmit={handleUpdateProfile} className='md:flex gap-10'>
-                {/* name and quantity row */}
-                <div className='flex flex-col  items-center'>
-                     <img className='h-[100px] w-[100px] rounded-[50%]' src={user.photoURL} alt="" /> 
-                    {/* <FaUserCircle className='h-[100px] w-[100px]' /> */}
-                    {/* <input type="file" className="file-input file-input-bordered file-input-sm w-56 mt-3" /> */}
+        <div className=" h-screen  flex justify-center items-center ">
+
+            <div className=' text-center pt-4 border bg-green-100'>
+                <h2 className='text-3xl pb-4 '>Profile</h2>
+                <div className='flex gap-16 p-8 '>
+                    <div className='flex flex-col p-4 '>
+                        <img className='h-[130px] w-[130px] rounded-[50%]' src={user.photoURL} alt="" />
+                        {/* <input type="file" className="file-input file-input-bordered file-input-sm w-56 mt-3" /> */}
+                    </div>
+                    <form onSubmit={handleUpdateProfile}>
+
+
+                        <div className=''>
+                            <div className=' flex gap-4 mb-4'>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Name</span>
+                                    </label>
+                                    <label className="">
+
+                                        <input type="text" name="name" defaultValue={dbUser?.name} placeholder="name" className="p-3 rounded-sm w-full" />
+                                    </label>
+
+                                </div>
+
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Email</span>
+                                    </label>
+                                    <label className="">
+
+                                        <input type="text" name="email" defaultValue={dbUser?.email} placeholder="email" className="p-3 rounded-sm w-full" />
+                                    </label>
+
+                                </div>
+
+
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Phone Number</span>
+                                    </label>
+                                    <label className="">
+                                        <input type="text" name="phone" defaultValue={dbUser?.phone} placeholder="phone" className="p-3 rounded-sm w-full" />
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <div className='flex gap-4 mb-4'>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Birthday</span>
+                                    </label>
+                                    <label className="">
+
+                                        <input type="text" name="birthday" defaultValue={dbUser?.birthday} placeholder="birthday" className="p-3 rounded-sm w-full" />
+                                    </label>
+
+                                </div>
+
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text text-lg font-bold">Gender</span>
+                                    </label>
+                                    <label className="">
+
+                                        <input type="text" name="gender" defaultValue={dbUser?.gender} placeholder="gender" className="p-3 rounded-sm w-full" />
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div className='form-control' style={{ width: '10%' }}>
+                            <input type="submit" value="Update" className="btn-sm  bg-success" />
+
+                        </div>
+
+
+                    </form>
                 </div>
-
-                <div className='className="max-w-sm"'>
-                    <div className=''>
-                    <div className="form-control ">
-                        <label className="label">
-                            <span className="label-text">Detail Name</span>
-                        </label>
-                        <label className="input-group">
-
-                    <input type="text" name="name" defaultValue={dbUser?.displayName}   placeholder="name" className="input input-bordered w-full" />
-                        </label>
-
-                    </div>
-
-                    <div className="form-control ">
-                        <label className="label">
-                            <span className="label-text">Phone Number</span>
-                        </label>
-                        <label className="input-group">
-
-                    <input type="text" name="phone" defaultValue={dbUser?.phone}   placeholder="phone" className="input input-bordered w-full" />
-                        </label>
-
-                    </div>
-
-              
-                <input type="submit" value="Update Profile" className="btn rounded-lg mt-2 bg-blue-300" />
-               
-                
-              
-                    </div>
-                </div>
-
-            </form>
             </div>
+
+
         </div>
+
     );
 };
 

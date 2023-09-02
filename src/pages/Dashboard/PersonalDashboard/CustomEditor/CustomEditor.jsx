@@ -3,7 +3,6 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './EditorStyles.css'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 function CustomEditor() {
     const [editorHtml, setEditorHtml] = useState('');
     // const [selectedFile, setSelectedFile] = useState(null);
@@ -82,9 +81,9 @@ function CustomEditor() {
     const handleDocxToPdfConversion = async () => {
         try {
             const formData = new FormData();
-            formData.append('document', );
+            formData.append('document', selectedFile);
 
-            const response = await axios.post('https://likho-backend.vercel.app/convert/docx2pdf', formData, {
+            const response = await axios.post('https://likho-arbayezid.vercel.app/convert/docx2pdf', formData, {
                 responseType: 'arraybuffer',
             });
 
@@ -99,7 +98,7 @@ function CustomEditor() {
 
     const handleTextToPdfConversion = async () => {
         try {
-            const response = await axios.post('https://likho-backend.vercel.app/convert/text2pdf', { text: editorHtml }, {
+            const response = await axios.post('https://likho-arbayezid.vercel.app/convert/text2pdf', { text: editorHtml }, {
                 responseType: 'arraybuffer',
             });
 
@@ -131,7 +130,7 @@ function CustomEditor() {
     ];
 
     return (
-        <div className='mt-5'>
+        <div>
             
             <button className='px-2' onClick={handleVoiceButtonClick}>Start Voice</button>
             <button className='px-2'  onClick={handleReadAloud}>Read Aloud</button>
@@ -140,7 +139,6 @@ function CustomEditor() {
             <button className='px-2'  onClick={handleShare}>Share</button>
             <button className='px-2'  onClick={handleDocxToPdfConversion}> Docx to PDF</button>
             <button className='px-2'  onClick={handleTextToPdfConversion}>Text to PDF</button>
-            <Link to="/room" >Video Chat</Link>
 
             <ReactQuill 
                 value={editorHtml}
