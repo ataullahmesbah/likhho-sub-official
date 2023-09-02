@@ -1,3 +1,1 @@
-// bayexid
-
-// ashiss
+// bayezid
