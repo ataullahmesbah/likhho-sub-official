@@ -5,7 +5,7 @@ import './EditorStyles.css'
 import axios from 'axios';
 function CustomEditor() {
     const [editorHtml, setEditorHtml] = useState('');
-    // const [selectedFile, setSelectedFile] = useState(null);
+     const [selectedFile, setSelectedFile] = useState(null);
 
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     let synth = null;

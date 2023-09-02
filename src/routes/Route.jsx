@@ -68,6 +68,10 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`https://likho-backend.vercel.app/users/${params.id}`)
       },
       {
+        path:'template',
+        element:<DashBoardTemplate></DashBoardTemplate>
+      },
+      {
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
         children:[
@@ -84,10 +88,10 @@ const router = createBrowserRouter([
             path:'sent',
             element:<DashBoardSent></DashBoardSent>
           },
-          {
-            path:'template',
-            element:<DashBoardTemplate></DashBoardTemplate>
-          },
+          // {
+          //   path:'template',
+          //   element:<DashBoardTemplate></DashBoardTemplate>
+          // },
           // {
             
           // }
