@@ -66,6 +66,10 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
       },
       {
+        path:'template',
+        element:<DashBoardTemplate></DashBoardTemplate>
+      },
+      {
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
         children:[
@@ -82,10 +86,10 @@ const router = createBrowserRouter([
             path:'sent',
             element:<DashBoardSent></DashBoardSent>
           },
-          {
-            path:'template',
-            element:<DashBoardTemplate></DashBoardTemplate>
-          },
+          // {
+          //   path:'template',
+          //   element:<DashBoardTemplate></DashBoardTemplate>
+          // },
           // {
             
           // }
