@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Desktop menu */}
         <ul className={`md:flex uppercase items-center gap-8 font-[Poppins] md:block hidden ${open ? "hidden" : "block"}`}>
           <li>
-            <Link to="/" className="py-7 px-3 inline-block">
+            <Link to="/" className="py-7 px-3 inline-block font-roboto">
               Home
             </Link>
           </li>
@@ -44,7 +44,7 @@ const Navbar = () => {
         `}
       >
         <li>
-          <Link to="/" className="py-7 px-3 inline-block">
+          <Link to="/" className="py-7 px-3 inline-block ">
             Home
           </Link>
         </li>
