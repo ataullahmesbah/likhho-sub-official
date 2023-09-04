@@ -32,7 +32,7 @@ const Features = () => {
       </div>
 
 
-
+      {/*  */}
 
       <Container>
         <div className="drawer lg:drawer-open mb-20 ">
