@@ -5,17 +5,30 @@ const Features = () => {
         <div className="">
 
 
-            <div className="bg-gradient-to-r from-gray-900 via-purple-950 to-purple-800 ">
-                {/* Your content goes here */}
-                <div className="lg:space-x-48 grid grid-cols-2 mx-64 font-roboto items-center justify-evenly">
-                <div className="space-y-5">
-                    <h1 className='text-5xl font-roboto text-white'>Likho Editor 7.1 <br /> <span className='text-lime-300'>features Overview</span></h1>
-                    <p className='text-gray-200'>Likho Editor offers a wide range of features, including  auto <br />formatting, paste from Word and mentions as  well as premium <br /> plugins such as Track Changes, Revision History and Real-time <br /> Collaboration.</p>
-                </div>
-                <img className='h-3/5' src="https://i.ibb.co/GWN8jLQ/features-banner-43451acc6e-1.webp" alt="" />
-            
-                </div>
-            </div>
+<div className="bg-gradient-to-r from-gray-900 via-purple-950 to-purple-800 lg:pb-0 pb-5">
+  <div className="lg:space-x-4 md:space-x-2 mx-4 lg:mx-64 font-roboto items-center justify-evenly">
+    <div className="lg:grid lg:grid-cols-2 md:flex md:flex-col md:items-center md:space-y-4">
+      <div className="space-y-5 mb-7 lg:mb-0">
+        <h1 className="text-3xl md:text-5xl font-roboto text-white">
+          Likho Editor 7.1 <br />
+          <span className="text-lime-300">Features Overview</span>
+        </h1>
+        <p className="text-gray-200">
+          Likho Editor offers a wide range of features, including auto
+          <br />formatting, paste from Word, and mentions, as well as premium
+          <br />plugins such as Track Changes, Revision History, and Real-time
+          <br />Collaboration.
+        </p>
+      </div>
+      <img
+        className="h-auto md:h-3/5 mx-auto"
+        src="https://i.ibb.co/GWN8jLQ/features-banner-43451acc6e-1.webp"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
+
 
 
 
