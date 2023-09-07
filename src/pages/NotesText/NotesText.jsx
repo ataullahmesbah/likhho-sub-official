@@ -76,8 +76,8 @@ const NotesText = () => {
 
     return (
         <div className="bg-gray-200 font-poppins lg:mt-[-239px]">
-            <div className="lg:pt-56 space-y-5 mb-8">
-                <h1 className="text-blue-950 text-center font-semibold text-4xl">A versatile rich text editor for all your needs</h1>
+            <div className="lg:pt-56 pt-16 space-y-5 mb-8">
+                <h1 className="text-blue-950 text-center font-semibold lg:text-4xl text-2xl">A versatile rich text editor for all your needs</h1>
                 <p className="text-center text-gray-700">Likho Editor 7.1 empowers users to create diverse content in your app—documents, <br /> reports, emails, notes, and chats with ease.</p>
 
                 <div className="flex justify-center items-center flex-wrap gap-4">
@@ -89,7 +89,9 @@ const NotesText = () => {
             </div>
 
             <Container>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 justify-center items-center pb-14">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 justify-center items-center pb-14">
+                    {/* ... Existing content ... */}
+                    {/* ... Existing content ... */}
 
                     {/* React Quill editor */}
                     <div className="p-4">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -6,8 +7,11 @@ const Footer = () => {
     return (
         <footer className="bg-gray-800 text-white p-8">
             <div className="container mx-auto flex flex-wrap">
-                <div className="w-full lg:w-1/4 mb-8">
-                    <h3 className="text-3xl mb-4">Likho</h3>
+                <div className="w-full lg:w-1/4 mb-8 space-y-4">
+                    <div className="flex items-center gap-4 ">
+                        <img src='https://i.ibb.co/8rbKVY1/image.png' alt="logo" className="md:cursor-pointer h-10" />
+                        <Link to='/'><h1 className="font-semibold font-poppins">LikhoEditor</h1></Link>
+                    </div>
                     <p>Create, collaborate, and streamline your documents effortlessly with Likho Docs.</p>
                 </div>
                 <div className="w-full lg:w-1/4 mb-8">

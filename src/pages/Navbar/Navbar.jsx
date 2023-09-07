@@ -12,21 +12,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`bg-white font-[Poppins] z-50 sticky top-0 ${open ? "shadow-lg" : ""}`}>
+    <nav className={`bg-white font-poppins z-50 sticky top-0 ${open ? "shadow-lg" : ""}`}>
       <div className="flex items-center font-medium justify-between lg:mx-40">
         <div className="z-500 p-5 md:w-auto w-full flex justify-between">
           <div className="flex items-center justify-center gap-4">
-            <img src='https://i.ibb.co/8rbKVY1/image.png' alt="logo" className="md:cursor-pointer h-9" />
-            <h1 className="font-semibold">LikhoEditor</h1>
+            <img src='https://i.ibb.co/8rbKVY1/image.png' alt="logo" className="md:cursor-pointer h-10" />
+            <Link to='/'><h1 className="font-semibold font-poppins">LikhoEditor</h1></Link>
           </div>
           <div className="text-3xl md:hidden" onClick={handleMenuClick}>
             <FaBars className={`text-purple-800`} />
           </div>
         </div>
         {/* Desktop menu */}
-        <ul className={`md:flex uppercase items-center gap-8 font-[Poppins] md:block hidden ${open ? "hidden" : "block"}`}>
+        <ul className={`md:flex text-blue-950 font-poppins items-center gap-3 hidden ${open ? "hidden" : "block"}`}>
           <li>
-            <Link to="/" className="py-7 px-3 inline-block font-roboto">
+            <Link to="/" className="py-7 px-3  font-poppins font-semibold">
               Home
             </Link>
           </li>
