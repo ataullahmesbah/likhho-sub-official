@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaHandsHelping, FaLongArrowAltRight } from 'react-icons/fa';
+import { BiMath, BiMenuAltRight } from 'react-icons/bi';
+import { FaCreativeCommons, FaHandsHelping, FaLongArrowAltRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const FeaturesDrawer = () => {
     return (
@@ -12,7 +14,7 @@ const FeaturesDrawer = () => {
                 <div className="bg-gray-100 border-4 border-lime-300 p-5 px-7 rounded-2xl space-y-4 shadow-2xl">
                     <div className="flex gap-7 items-center text-2xl ">
                         <FaHandsHelping className='text-6xl text-purple-700' />
-                        <h2 className='font-poppins font-semibold text-blue-950'>Real Time Collaboration</h2>
+                        <h2 className='font-poppins font-semibold text-blue-950'>Comments</h2>
 
                     </div>
                     <p>Combine Track Changes and Comments with real-time collaborative editing to have a synchronous, all-around co-authoring experience.</p>
@@ -36,7 +38,7 @@ const FeaturesDrawer = () => {
                 <div className="bg-gray-100 border-4 border-lime-300 p-7 px-7 rounded-2xl space-y-5 shadow-2xl">
                     <div className="flex gap-7 items-center text-2xl ">
                         <FaHandsHelping className='text-6xl text-purple-700' />
-                        <h2 className='font-poppins font-semibold text-blue-950'>Real Time Collaboration</h2>
+                        <h2 className='font-poppins font-semibold text-blue-950'>Import from Word</h2>
 
                     </div>
                     <p>Combine Track Changes and Comments with real-time collaborative editing to have a synchronous, all-around co-authoring experience.</p>
@@ -46,11 +48,11 @@ const FeaturesDrawer = () => {
 
                 <div className="bg-gray-100 border-4 border-lime-300 p-7 px-7 rounded-2xl space-y-5 shadow-2xl">
                     <div className="flex gap-7 items-center text-2xl ">
-                        <FaHandsHelping className='text-6xl text-purple-700' />
-                        <h2 className='font-poppins font-semibold text-blue-950'>Real Time Collaboration</h2>
+                        <BiMath className='text-6xl text-purple-700' />
+                        <Link to='/mathfeatures'><h2 className='font-poppins font-semibold text-blue-950'>Math Equation</h2></Link>
 
                     </div>
-                    <p>Combine Track Changes and Comments with real-time collaborative editing to have a synchronous, all-around co-authoring experience.</p>
+                    <p>Mathematics is the music of reason, the melody of logic, and the harmony of the universe.In the world of mathematics, </p>
                     <p className='text-purple-600 flex items-center gap-4'>Learn More <FaLongArrowAltRight /> </p>
 
                 </div>
