@@ -21,7 +21,7 @@ const ProductsLevelUI = () => {
 
   return (
 
-    <div className="bg-gray-100 p-20">
+    <div className="bg-gray-100 p-20 font-poppins">
       <Container>
 
 
@@ -30,7 +30,7 @@ const ProductsLevelUI = () => {
 
           <div className="space-y-3 mb-6">
             <h2 className='text-blue-700 font-bold text-xl'>Produces</h2>
-            <h4 className='text-blue-950 font-bold text-4xl '>Every Essential Tool Prepared <br /> <span className='text-blue-600 font-bold text-4xl'>ready for production</span></h4>
+            <h4 className='text-blue-950 font-bold text-4xl '>Every Essential Tool Prepared <br /> ready for production</h4>
             <p>Build with Remarkable Speed, All While Maintaining Complete Flexibility and Control.</p>
 
             <div className="w-full  p-4 space-y-3">

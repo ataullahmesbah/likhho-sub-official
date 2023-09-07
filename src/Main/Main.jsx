@@ -21,8 +21,8 @@ import TemplateSection from "../pages/Template/TemplateSection";
 const Main = () => {
     return (
         <div>
-            {/* <Drag></Drag>
-            <EditDocs></EditDocs> */}
+            <Drag></Drag>
+            {/* <EditDocs></EditDocs> */}
             <NotesText></NotesText>
             <TemplateSection></TemplateSection>
             <CreativeWorkShop></CreativeWorkShop>

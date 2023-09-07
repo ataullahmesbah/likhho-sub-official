@@ -12,9 +12,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`bg-white font-[Poppins] z-10 sticky top-0 ${open ? "shadow-lg" : ""}`}>
+    <nav className={`bg-white font-[Poppins] z-50 sticky top-0 ${open ? "shadow-lg" : ""}`}>
       <div className="flex items-center font-medium justify-between lg:mx-40">
-        <div className="z-50 p-5 md:w-auto w-full flex justify-between">
+        <div className="z-500 p-5 md:w-auto w-full flex justify-between">
           <div className="flex items-center justify-center gap-4">
             <img src='https://i.ibb.co/8rbKVY1/image.png' alt="logo" className="md:cursor-pointer h-9" />
             <h1 className="font-semibold">LikhoEditor</h1>
