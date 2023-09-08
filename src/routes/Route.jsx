@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import MainLayout from "../Layout/MainLayout";
 import Navbar from "../Navbar/Navbar";
-
+import {v4 as uuid} from 'uuid'
 
 import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
@@ -25,6 +25,7 @@ import Drag from "../pages/Drag&Drop/Drag";
 import Drags from "../pages/DragInAccount/Drags";
 import VideoHomepage from "../pages/VideoChat/VideoHomepage";
 import VideoRoompage from "../pages/VideoChat/VideoRoompage";
+import DocEditor from "../pages/Final-Editor/DocEditor";
 
 
 
@@ -58,58 +59,67 @@ const router = createBrowserRouter([
         element: <UpdateProfile></UpdateProfile>
       },
       {
-        path: '/rich',
+        path: '/editor',
         element: <CustomEditor></CustomEditor>
+      },
+      {
+        path: '/doc',
+        element:<DocEditor></DocEditor>
+      },
+      {
+        path: '/',
+        element: <Navigate replace to={`/doc/${uuid()}`} />
       },
       
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
-        loader: ({params}) => fetch(`https://likho-backend.vercel.app/users/${params.id}`)
+        loader: ({ params }) => fetch(`https://likho-backend.vercel.app/users/${params.id}`)
       },
       {
-        path:'template',
-        element:<DashBoardTemplate></DashBoardTemplate>
+        path: 'template',
+        element: <DashBoardTemplate></DashBoardTemplate>
       },
       {
-        path:'/dashboard',
-        element:<Dashboard></Dashboard>,
-        children:[
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
           {
-            path:'newDoc',
-            element:<DashDocument></DashDocument>
+            path: 'newDoc',
+            element: <DashDocument></DashDocument>
           },
           {
-            path:'inbox',
-            element:<DashBoardInbox></DashBoardInbox>
+            path: 'inbox',
+            element: <DashBoardInbox></DashBoardInbox>
           },
-          
+
           {
-            path:'sent',
-            element:<DashBoardSent></DashBoardSent>
+            path: 'sent',
+            element: <DashBoardSent></DashBoardSent>
           },
           // {
           //   path:'template',
           //   element:<DashBoardTemplate></DashBoardTemplate>
           // },
           // {
-            
+
           // }
-          
+
         ]
 
       },
       {
-        path:'/editor',
-        element:<Editor></Editor>
+        path: '/editor',
+        element: <Editor></Editor>
       },
       {
         path: "/updateProfile/:id",
         element: <UpdateProfile></UpdateProfile>,
-        loader:({params})=>
-        fetch(`https://likho-backend.vercel.app/users/${params.id}`)
-},
-       { path:"/chat",
+        loader: ({ params }) =>
+          fetch(`https://likho-backend.vercel.app/users/${params.id}`)
+      },
+      {
+        path: "/chat",
         element: <ChatContainer></ChatContainer>
       },
       {
@@ -117,11 +127,11 @@ const router = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
-        path:'dash',
-        element:''
+        path: 'dash',
+        element: ''
       },
       {
-        path:"/room",
+        path: "/room",
         element: <VideoHomepage></VideoHomepage>
       },
       {
