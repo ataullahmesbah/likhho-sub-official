@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
 import Container from "../pages/shared/Container";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../pages/Providers/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user)
+  console.log(user);
+  const [dbUser, setDbUser] = useState({});
+  useEffect(() => {
+    fetch(`https://likho-backend.vercel.app/users/${user?.email}`)
+        .then(res => res.json())
+        .then(data => setDbUser(data)
+
+        )
+}, [user])
+console.log(dbUser);
   const handleLogOut = () => {
     logOut()
       .then()
@@ -150,6 +159,9 @@ const Navbar = () => {
                     >
                       Dashboard
                     </Link>
+
+                    
+                    
                     <Link
                       onClick={handleLogOut}
                       className="font-normal hover:font-semibold"

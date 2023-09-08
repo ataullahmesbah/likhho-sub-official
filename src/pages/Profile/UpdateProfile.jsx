@@ -9,7 +9,7 @@ const UpdateProfile = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://likho-backend.vercel.app/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setDbUser(data)
 
@@ -31,7 +31,7 @@ const UpdateProfile = () => {
 
 
         // send data to server
-        fetch(`http://localhost:5000/users/${dbUser?._id}`, {
+        fetch(`https://likho-backend.vercel.app/users/${dbUser?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -52,7 +52,7 @@ const UpdateProfile = () => {
     return (
         <div className=" h-screen  flex justify-center items-center ">
 
-            <div className=' text-center pt-4 border bg-green-100'>
+            <div className=' text-center pt-4 border bg-gray-200'>
                 <h2 className='text-3xl pb-4 '>Profile</h2>
                 <div className='flex gap-16 p-8 '>
                     <div className='flex flex-col p-4 '>

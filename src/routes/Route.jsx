@@ -28,7 +28,6 @@ import VideoHomepage from "../pages/VideoChat/VideoHomepage";
 import VideoRoompage from "../pages/VideoChat/VideoRoompage";
 import Navbar from "../pages/Navbar/Navbar";
 import Features from "../pages/LikhoEditor7.1/Features/Features";
-
 import CreateBlog from "../pages/CreateBlog/CreateBlog";
 
 
@@ -71,7 +70,11 @@ const router = createBrowserRouter([
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
-        loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+        loader: ({params}) => fetch(`https://likho-backend.vercel.app/users/${params.id}`)
+      },
+      {
+        path:'template',
+        element:<DashBoardTemplate></DashBoardTemplate>
       },
       {
         path:'/dashboard',
@@ -90,10 +93,10 @@ const router = createBrowserRouter([
             path:'sent',
             element:<DashBoardSent></DashBoardSent>
           },
-          {
-            path:'template',
-            element:<DashBoardTemplate></DashBoardTemplate>
-          },
+          // {
+          //   path:'template',
+          //   element:<DashBoardTemplate></DashBoardTemplate>
+          // },
           // {
             
           // }
@@ -109,7 +112,7 @@ const router = createBrowserRouter([
         path: "/updateProfile/:id",
         element: <UpdateProfile></UpdateProfile>,
         loader:({params})=>
-        fetch(`http://localhost:5000/users/${params.id}`)
+        fetch(`https://likho-backend.vercel.app/users/${params.id}`)
 },
        { path:"/chat",
         element: <ChatContainer></ChatContainer>
