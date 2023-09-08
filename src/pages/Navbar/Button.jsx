@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Button = () => {
   return (
-    <button className="bg-primary text-white  px-6 py-2 rounded-full">
-      Get Started
-    </button>
+    
+    <Link to='/signup'><button className="text-lg font-poppins px-4 bg-purple-700 hover:bg-purple-500 text-center text-white p-2 rounded-lg">Get Started</button></Link>
   );
 };
 

@@ -20,8 +20,8 @@ const NavLinks = () => {
                 setSubHeading("");
               }}
             >
-              <div className="flex items-center gap-5">
-                <span className="text-lg font-semibold">{link.name}</span>
+              <div className="flex font-poppins items-center gap-5">
+                <span className=" font-semibold">{link.name}</span>
                 <span className="text-purple-500">
                   <FaChevronDown className="text-base" name={`${
                     heading === link.name ? "chevron-up" : "chevron-down"
@@ -42,14 +42,14 @@ const NavLinks = () => {
                   <div className="bg-white p-5 grid grid-cols-3 gap-10">
                     {link.sublinks.map((mysublinks, mysublinksIndex) => (
                       <div key={mysublinksIndex}>
-                        <h1 className="text-lg font-semibold">
+                        <h1 className="font-poppins text-purple-500 font-semibold">
                           {mysublinks.Head}
                         </h1>
                         {mysublinks.sublink.map((slink, subindex) => (
                           <li key={subindex} className="text-sm text-gray-600 my-2.5">
                             <div className="flex items-center gap-5  rounded-lg hover:bg-purple-100 p-3">
                               {slink.icon && (
-                                <span className="text-purple-950  text-lg  ">
+                                <span className="text-gray-700  text-lg  ">
                                   {slink.icon}
                                 </span>
                               )}
@@ -83,7 +83,7 @@ const NavLinks = () => {
                         ? setSubHeading(slinks.Head)
                         : setSubHeading("")
                     }
-                    className="py-4 pl-7 font-semibold md:pr-0 pr-5 flex justify-between items-center md:pr-0 pr-5"
+                    className="py-4 pl-7 font-semibold  flex justify-between items-center md:pr-0 pr-5"
                   >
                     <div className="flex items-center gap-5">
                       <span className="text-lg">{slinks.Head}</span>
