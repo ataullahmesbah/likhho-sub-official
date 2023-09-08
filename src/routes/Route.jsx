@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import MainLayout from "../Layout/MainLayout";
-import Navbar from "../Navbar/Navbar";
+
 
 
 import LogIn from "../pages/LogIn/LogIn";
@@ -20,11 +20,16 @@ import DashBoardSent from "../pages/Dashboard/DashBoardSent/DashBoardSent";
 import DashBoardInbox from "../pages/Dashboard/DashBoardInbox/DashBoardInbox";
 import DashBoardTemplate from "../pages/Dashboard/DashBoardTemplate/DashBoardTemplate";
 import DashDocument from "../pages/DashDocument/DashDocument";
+
 import CustomEditor from "../pages/Dashboard/PersonalDashboard/CustomEditor/CustomEditor";
 import Drag from "../pages/Drag&Drop/Drag";
 import Drags from "../pages/DragInAccount/Drags";
 import VideoHomepage from "../pages/VideoChat/VideoHomepage";
 import VideoRoompage from "../pages/VideoChat/VideoRoompage";
+import Navbar from "../pages/Navbar/Navbar";
+import Features from "../pages/LikhoEditor7.1/Features/Features";
+import CreateBlog from "../pages/CreateBlog/CreateBlog";
+
 
 
 
@@ -116,6 +121,7 @@ const router = createBrowserRouter([
         path: 'blog',
         element: <Blog></Blog>
       },
+      
       {
         path:'dash',
         element:''
@@ -127,6 +133,10 @@ const router = createBrowserRouter([
       {
         path: "/room/:roomID",
         element: <VideoRoompage></VideoRoompage>
+      },
+      {
+        path: 'features',
+        element: <Features></Features>
       }
     ]
   },

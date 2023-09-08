@@ -120,6 +120,7 @@ console.log(dbUser);
               <li>
                   <Link to='/blog'>Blog</Link>
                 </li>
+             
             </ul>
           </div>
           <div className="navbar-end ml-4 ">
@@ -150,7 +151,7 @@ console.log(dbUser);
                       to="/profile"
                       className="font-normal hover:font-semibold"
                     >
-                      Profile
+                      Profile{" "}
                     </Link>
                     <Link
                       to="/dashboard"
