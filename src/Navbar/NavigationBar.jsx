@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../pages/Providers/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
 
-const Navbar = () => {
+const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   const [dbUser, setDbUser] = useState({});
@@ -183,4 +183,4 @@ console.log(dbUser);
   );
 };
 
-export default Navbar;
+export default NavigationBar;
