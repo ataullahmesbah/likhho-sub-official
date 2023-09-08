@@ -9,7 +9,7 @@ const UpdateProfile = () => {
 
 
     useEffect(() => {
-        fetch(`https://likho-arbayezid.vercel.app/users/${user?.email}`)
+        fetch(`https://likho-backend.vercel.app/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setDbUser(data)
 
@@ -31,7 +31,7 @@ const UpdateProfile = () => {
 
 
         // send data to server
-        fetch(`https://likho-arbayezid.vercel.app/users/${dbUser?._id}`, {
+        fetch(`https://likho-backend.vercel.app/users/${dbUser?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
