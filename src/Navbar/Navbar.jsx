@@ -9,7 +9,7 @@ const Navbar = () => {
   console.log(user);
   const [dbUser, setDbUser] = useState({});
   useEffect(() => {
-    fetch(`https://likho-arbayezid.vercel.app/users/${user?.email}`)
+    fetch(`https://likho-backend.vercel.app/users/${user?.email}`)
         .then(res => res.json())
         .then(data => setDbUser(data)
 
@@ -120,6 +120,7 @@ console.log(dbUser);
               <li>
                   <Link to='/blog'>Blog</Link>
                 </li>
+             
             </ul>
           </div>
           <div className="navbar-end ml-4 ">
@@ -150,7 +151,7 @@ console.log(dbUser);
                       to="/profile"
                       className="font-normal hover:font-semibold"
                     >
-                      Profile
+                      Profile{" "}
                     </Link>
                     <Link
                       to="/dashboard"

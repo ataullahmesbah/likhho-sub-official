@@ -6,7 +6,7 @@ import animationData from '../../../public/chat.json';
 import Lottie from 'react-lottie';
 
 
-const socket = io.connect("https://likho-backend.vercel.app/");
+const socket = io.connect("https://likho-backend.vercel.app");
 
 const ChatContainer = () => {
     const [isChatOpen, setIsChatOpen] = useState(false);
