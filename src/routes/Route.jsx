@@ -3,6 +3,8 @@ import Main from "../Main/Main";
 import MainLayout from "../Layout/MainLayout";
 import {v4 as uuid} from 'uuid'
 
+
+
 import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
 import Editor from "../pages/Editor/Editor/Editor";
@@ -29,6 +31,7 @@ import DocEditor from "../pages/Final-Editor/DocEditor";
 import Navbar from "../pages/Navbar/Navbar";
 import Features from "../pages/LikhoEditor7.1/Features/Features";
 import CreateBlog from "../pages/CreateBlog/CreateBlog";
+import MathFeatures from "../pages/LikhoEditor7.1/Features/MathFeatures";
 
 
 
@@ -113,8 +116,8 @@ const router = createBrowserRouter([
 
       },
       {
-        path: '/editor',
-        element: <Editor></Editor>
+        path:'/editor',
+        element:<Editor></Editor>
       },
       {
         path: "/updateProfile/:id",
@@ -129,6 +132,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: 'mathfeatures',
+        element: <MathFeatures></MathFeatures>
       },
       
       {
