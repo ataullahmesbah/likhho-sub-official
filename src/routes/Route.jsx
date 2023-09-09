@@ -1,6 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import MainLayout from "../Layout/MainLayout";
+import {v4 as uuid} from 'uuid'
 
 
 
@@ -29,6 +30,8 @@ import VideoRoompage from "../pages/VideoChat/VideoRoompage";
 import Navbar from "../pages/Navbar/Navbar";
 import Features from "../pages/LikhoEditor7.1/Features/Features";
 import CreateBlog from "../pages/CreateBlog/CreateBlog";
+import MathFeatures from "../pages/LikhoEditor7.1/Features/MathFeatures";
+import DocEditor from "../pages/Final Editor/DocEditor";
 
 
 
@@ -108,6 +111,15 @@ const router = createBrowserRouter([
         path:'/editor',
         element:<Editor></Editor>
       },
+      
+      {
+        path: '/doc',
+        element:<DocEditor></DocEditor>
+      },
+      {
+        path: '/',
+        element: <Navigate replace to={`/doc/${uuid()}`} />
+      },
       {
         path: "/updateProfile/:id",
         element: <UpdateProfile></UpdateProfile>,
@@ -120,6 +132,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: 'mathfeatures',
+        element: <MathFeatures></MathFeatures>
       },
       
       {

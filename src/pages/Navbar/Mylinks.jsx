@@ -1,4 +1,4 @@
-import { FaEdit, FaFacebook, FaHandsHelping, FaHockeyPuck, FaPenSquare, FaTwitter } from "react-icons/fa"
+import { FaBlenderPhone, FaCalendarMinus, FaClone, FaCloudDownloadAlt, FaCommentDollar, FaDochub, FaEdit, FaFacebook, FaFileExport, FaFilePdf, FaFileWord, FaHandsHelping, FaHockeyPuck, FaPager, FaPenSquare, FaReadme, FaSimplybuilt, FaSpellCheck, FaStreetView, FaSuitcaseRolling, FaTwitter, FaUserCog } from "react-icons/fa"
 
 export const links = [
   {
@@ -10,20 +10,20 @@ export const links = [
         sublink: [
           { icon: <FaHockeyPuck />, name: "Products Tour", link: "/" },
           { icon: <FaEdit />, name: "Features", link: "/features" },
-          { name: "Demo Pages", link: "/" },
-          { name: "Online Builder", link: "/" },
-          { name: "Documentation", link: "/" },
-          { name: "Download", link: "/" },
+          { icon: <FaPager />, name: "Demo Pages", link: "/" },
+          { icon: <FaSimplybuilt />, name: "Online Builder", link: "/" },
+          { icon: <FaDochub />, name: "Documentation", link: "/" },
+          { icon: <FaCloudDownloadAlt />, name: "Download", link: "/" },
         ],
       },
       {
         Head: "Ultra Features",
         sublink: [
-          { name: "Collaboration", link: "/" },
-          { name: "Export to PDF/Word", link: "/" },
-          { name: "Import from Word", link: "/" },
-          { name: "File Management", link: "/" },
-          { name: "Spell and Grammar Check", link: "/" },
+          { icon: <FaUserCog />, name: "Collaboration", link: "/" },
+          { icon: <FaFilePdf />, name: "Export to PDF/Word", link: "/" },
+          { icon: <FaFileWord />, name: "Import from Word", link: "/" },
+          { icon: <FaFileExport />, name: "File Management", link: "/" },
+          { icon: <FaSpellCheck />,name: "Spell and Grammar Check", link: "/" },
         ],
       },
       {
@@ -46,18 +46,18 @@ export const links = [
       {
         Head: "Likho Special Overview",
         sublink: [
-          { name: "Product tour", link: "/" },
-          { name: "Live Demo", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "Pricing", link: "/" },
-          { name: "Documentation", link: "/" },
+       
+          { icon: <FaClone />, name: "Live Demo", link: "/" },
+        
+          { icon: <FaCommentDollar />,name: "Pricing", link: "/" },
+          { icon: <FaDochub />, name: "Documentation", link: "/" },
         ],
       },
       {
         Head: "Demo",
         sublink: [
-          { name: "img", link: "/" },
-          { name: "btn", link: "/" },
+          // { name: "img", link: "/" },
+          // { name: "btn", link: "/" },
 
         ],
       },
@@ -72,16 +72,16 @@ export const links = [
         Head: "Resources Overview",
         sublink: [
           { icon: <FaPenSquare />, name: "Blog", link: "/blog" },
-          { name: "Likho studies", link: "/" },
-          { name: "Solutions", link: "/" },
-          { name: "Documentation", link: "/" },
-          { name: "Insights", link: "/" },
+          { icon: <FaSuitcaseRolling />, name: "Likho studies", link: "/" },
+          { icon: <FaReadme />, name: "Solutions", link: "/" },
+          // { name: "Documentation", link: "/" },
+          { icon: <FaStreetView />, name: "Insights", link: "/" },
         ],
       },
       {
-        Head: "How LikhoEditor saves Blooksy’s writers 120+ hours a year by making writing more collaborative",
+        Head: "Learn More",
         sublink: [
-          { name: "Learn More", link: "/" },
+          { icon: <FaCalendarMinus />, name: "Learn More", link: "/" },
 
         ],
       },
@@ -96,9 +96,9 @@ export const links = [
       {
         Head: "Support Center 7.1",
         sublink: [
-          { name: "Documentation", link: "/" },
+          // { name: "Documentation", link: "/" },
           { icon: <FaHandsHelping />, name: "Help", link: "/" },
-          { name: "Contact Us", link: "/" },
+          { icon: <FaBlenderPhone />, name: "Contact Us", link: "/" },
 
         ],
       },

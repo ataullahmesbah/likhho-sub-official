@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../pages/Providers/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
 
-const Navbar = () => {
+const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   const [dbUser, setDbUser] = useState({});
@@ -120,7 +120,6 @@ console.log(dbUser);
               <li>
                   <Link to='/blog'>Blog</Link>
                 </li>
-             
             </ul>
           </div>
           <div className="navbar-end ml-4 ">
@@ -151,7 +150,7 @@ console.log(dbUser);
                       to="/profile"
                       className="font-normal hover:font-semibold"
                     >
-                      Profile{" "}
+                      Profile
                     </Link>
                     <Link
                       to="/dashboard"
@@ -184,4 +183,4 @@ console.log(dbUser);
   );
 };
 
-export default Navbar;
+export default NavigationBar;
