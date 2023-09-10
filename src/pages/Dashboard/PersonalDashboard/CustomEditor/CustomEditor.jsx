@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './EditorStyles.css'
 import axios from 'axios';
+
 function CustomEditor() {
     const [editorHtml, setEditorHtml] = useState('');
      const [selectedFile, setSelectedFile] = useState(null);
@@ -134,7 +135,7 @@ function CustomEditor() {
             
             <button className='px-2' onClick={handleVoiceButtonClick}>Start Voice</button>
             <button className='px-2'  onClick={handleReadAloud}>Read Aloud</button>
-             <input type="file" accept=".txt" onChange={handleFileSelection} />
+            <input type="file" accept=".txt" onChange={handleFileSelection} />
             <button className='px-2'  onClick={handleDownload}>Download</button>
             <button className='px-2'  onClick={handleShare}>Share</button>
             <button className='px-2'  onClick={handleDocxToPdfConversion}> Docx to PDF</button>
