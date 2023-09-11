@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './EditorStyles.css'
 import axios from 'axios';
+  // Import pdf-puppeteer library
 
 function CustomEditor() {
     const [editorHtml, setEditorHtml] = useState('');
@@ -111,6 +112,7 @@ function CustomEditor() {
             console.log('Web Share API not supported in this browser.');
         }
     };
+    
     const handleDocxToPdfConversion = async () => {
         try {
             const formData = new FormData();
@@ -129,20 +131,33 @@ function CustomEditor() {
         }
     };
 
+   
+
+    
+
+
     const handleTextToPdfConversion = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/convert/text2pdf', { text: editorHtml }, {
-                responseType: 'arraybuffer',
-            });
-
-            const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
-            const pdfUrl = URL.createObjectURL(pdfBlob);
-
-            window.open(pdfUrl);
+          // Remove the <p> tags from the editorHtml content
+          const sanitizedHtml = editorHtml.replace(/<\/?p>/g, '');
+      
+          const response = await axios.post(
+            'http://localhost:5000/convert/text2pdf',
+            { text: sanitizedHtml }, // Use sanitizedHtml instead of editorHtml
+            {
+              responseType: 'arraybuffer',
+            }
+          );
+      
+          const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
+          const pdfUrl = URL.createObjectURL(pdfBlob);
+      
+          window.open(pdfUrl);
         } catch (error) {
-            console.error('Error converting text to PDF:', error);
+          console.error('Error converting text to PDF:', error);
         }
-    };
+      };
+      
 
 
 
