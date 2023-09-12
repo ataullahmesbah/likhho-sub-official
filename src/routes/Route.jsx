@@ -32,6 +32,7 @@ import Features from "../pages/LikhoEditor7.1/Features/Features";
 import CreateBlog from "../pages/CreateBlog/CreateBlog";
 import MathFeatures from "../pages/LikhoEditor7.1/Features/MathFeatures";
 import TemplatesDemo from "../pages/TemplatesDemo/TemplatesDemo";
+import TemplatesDetails from "../pages/TemplatesDemo/TemplatesDetails";
 
 
 
@@ -69,51 +70,52 @@ const router = createBrowserRouter([
         path: '/rich',
         element: <CustomEditor></CustomEditor>
       },
-      
+
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
-        loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`)
       },
       {
-        path:'/dashboard',
-        element:<Dashboard></Dashboard>,
-        children:[
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
           {
-            path:'newDoc',
-            element:<DashDocument></DashDocument>
+            path: 'newDoc',
+            element: <DashDocument></DashDocument>
           },
           {
-            path:'inbox',
-            element:<DashBoardInbox></DashBoardInbox>
+            path: 'inbox',
+            element: <DashBoardInbox></DashBoardInbox>
           },
-          
+
           {
-            path:'sent',
-            element:<DashBoardSent></DashBoardSent>
+            path: 'sent',
+            element: <DashBoardSent></DashBoardSent>
           },
           {
-            path:'template',
-            element:<DashBoardTemplate></DashBoardTemplate>
+            path: 'template',
+            element: <DashBoardTemplate></DashBoardTemplate>
           },
           // {
-            
+
           // }
-          
+
         ]
 
       },
       {
-        path:'/editor',
-        element:<Editor></Editor>
+        path: '/editor',
+        element: <Editor></Editor>
       },
       {
         path: "/updateProfile/:id",
         element: <UpdateProfile></UpdateProfile>,
-        loader:({params})=>
-        fetch(`http://localhost:5000/users/${params.id}`)
-},
-       { path:"/chat",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/users/${params.id}`)
+      },
+      {
+        path: "/chat",
         element: <ChatContainer></ChatContainer>
       },
       {
@@ -124,13 +126,13 @@ const router = createBrowserRouter([
         path: 'mathfeatures',
         element: <MathFeatures></MathFeatures>
       },
-      
+
       {
-        path:'dash',
-        element:''
+        path: 'dash',
+        element: ''
       },
       {
-        path:"/room",
+        path: "/room",
         element: <VideoHomepage></VideoHomepage>
       },
       {
@@ -144,6 +146,10 @@ const router = createBrowserRouter([
       {
         path: 'templatesdemo',
         element: <TemplatesDemo></TemplatesDemo>
+      },
+      {
+        path: 'templatesdetails/:id',
+        element: <TemplatesDetails></TemplatesDetails>
       }
     ]
   },
