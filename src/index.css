@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.container.ql-container {
+
+    width: 60%;
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+    margin: 10px auto 10px auto !important;
+    min-height: 100vh ;
+  
+  }
+  
+  .ql-toolbar.ql-snow{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background: #fff;
+    border: none !important;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+  }

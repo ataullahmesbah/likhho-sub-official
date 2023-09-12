@@ -5,14 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_apiKey,
-    authDomain: import.meta.env.VITE_authDomain,
-    projectId: import.meta.env.VITE_projectId,
-    storageBucket: import.meta.env.VITE_storageBucket,
-    messagingSenderId: import.meta.env.VITE_messagingSenderId,
-    appId: import.meta.env.VITE_appId
-};
-// console.log(import.meta.env.VITE_apiKey)
+    apiKey: "AIzaSyAxu6SgodR-g9wJN1yCAWYJb4LyX9JbHcI",
+    authDomain: "likho-7e3d6.firebaseapp.com",
+    projectId: "likho-7e3d6",
+    storageBucket: "likho-7e3d6.appspot.com",
+    messagingSenderId: "40211460818",
+    appId: "1:40211460818:web:8916da241c4fc86215b30b"
+  };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
