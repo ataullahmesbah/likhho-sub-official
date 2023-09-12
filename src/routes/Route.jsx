@@ -31,6 +31,7 @@ import Features from "../pages/LikhoEditor7.1/Features/Features";
 
 import CreateBlog from "../pages/CreateBlog/CreateBlog";
 import MathFeatures from "../pages/LikhoEditor7.1/Features/MathFeatures";
+import TemplatesDemo from "../pages/TemplatesDemo/TemplatesDemo";
 
 
 
@@ -139,6 +140,10 @@ const router = createBrowserRouter([
       {
         path: 'features',
         element: <Features></Features>
+      },
+      {
+        path: 'templatesdemo',
+        element: <TemplatesDemo></TemplatesDemo>
       }
     ]
   },

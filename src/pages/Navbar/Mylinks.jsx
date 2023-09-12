@@ -19,7 +19,8 @@ export const links = [
       {
         Head: "Ultra Features",
         sublink: [
-          { icon: <FaUserCog />, name: "Collaboration", link: "/" },
+          { icon: <FaUserCog />, name: "Real-Time Collaboration", link: "/" },
+          { icon: <FaUserCog />, name: "Templates", link: "/templatesdemo" },
           { icon: <FaFilePdf />, name: "Export to PDF/Word", link: "/" },
           { icon: <FaFileWord />, name: "Import from Word", link: "/" },
           { icon: <FaFileExport />, name: "File Management", link: "/" },
