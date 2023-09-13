@@ -1,8 +1,6 @@
 
 import Banner from "../pages/Banner/Banner";
-import Counter from "../pages/Counting doc/Counter";
 import Developer from "../pages/Developer/Developer";
-
 import ProductsLevelUI from "../pages/Home/ProductLevelUI/ProductsLevelUI";
 import Review from "../pages/Home/Review/Review";
 import Instruction from "../pages/Instruction/Instruction";
@@ -12,6 +10,10 @@ import NotesText from "../pages/NotesText/NotesText";
 import ReadSection from "../pages/ReadSection/ReadSection";
 import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
 import TemplateSection from "../pages/Template/TemplateSection";
+import ResumeEditor from "../pages/TemplateProduce/TemplateProduce";
+
+
+
 
 
 
@@ -20,8 +22,10 @@ const Main = () => {
     return (
         <div>
             <Banner></Banner>
-            
             <NotesText></NotesText>
+
+            {/* <ResumeEditor></ResumeEditor> */}
+
             <TemplateSection></TemplateSection>
             <CreativeWorkShop></CreativeWorkShop>
             <ProductsLevelUI></ProductsLevelUI>
@@ -31,9 +35,8 @@ const Main = () => {
             <Review></Review>
             <Developer></Developer>
             <ChatContainer></ChatContainer>
-            {/* <Counter></Counter> */}
-            {/* <FAQ></FAQ> */}
-            
+
+
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const TemplatesDetailsInfo = ({ templateInfo }) => {
-    const { title, short_description, image, img_1, img_2, description, sub_description } = templateInfo;
+    const { _id, title, short_description, image, img_1, img_2, description, sub_description } = templateInfo;
 
 
     return (
@@ -24,7 +24,7 @@ const TemplatesDetailsInfo = ({ templateInfo }) => {
                                 {short_description}
                             </p>
 
-                            <Link to={`/docs`}><button className="text-lg font-poppins px-4 bg-blue-200 mt-5 hover:bg-white text-center text-blue-950 font-semibold p-2 rounded-lg">Access Template</button></Link>
+                            <Link to={`/docs/${_id}`}><button className="text-lg font-poppins px-4 bg-blue-200 mt-5 hover:bg-white text-center text-blue-950 font-semibold p-2 rounded-lg">Access Template</button></Link>
 
                             {/* Create corner stands in top-left and bottom-right corners */}
                             <div className="absolute top-28 left-16 bottom-6 w-4 radio-xs h-4 bg-gradient-to-tr from-purple-800 to-transparent"></div>
