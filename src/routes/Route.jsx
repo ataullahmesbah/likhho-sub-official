@@ -1,6 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import MainLayout from "../Layout/MainLayout";
+import { v4 as uuid } from 'uuid'
 
 
 
@@ -26,13 +27,14 @@ import Drag from "../pages/Drag&Drop/Drag";
 import Drags from "../pages/DragInAccount/Drags";
 import VideoHomepage from "../pages/VideoChat/VideoHomepage";
 import VideoRoompage from "../pages/VideoChat/VideoRoompage";
+import DocEditor from "../pages/Final-Editor/DocEditor";
 import Navbar from "../pages/Navbar/Navbar";
 import Features from "../pages/LikhoEditor7.1/Features/Features";
-
 import CreateBlog from "../pages/CreateBlog/CreateBlog";
 import MathFeatures from "../pages/LikhoEditor7.1/Features/MathFeatures";
 import TemplatesDemo from "../pages/TemplatesDemo/TemplatesDemo";
 import TemplatesDetails from "../pages/TemplatesDemo/TemplatesDetails";
+import ErrorPage from "../pages/Error/ErrorPage";
 
 
 
@@ -41,6 +43,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -67,10 +70,17 @@ const router = createBrowserRouter([
         element: <UpdateProfile></UpdateProfile>
       },
       {
-        path: '/rich',
+        path: '/editor',
         element: <CustomEditor></CustomEditor>
       },
-
+      {
+        path: '/doc',
+        element: <DocEditor></DocEditor>
+      },
+      {
+        path: '/',
+        element: <Navigate replace to={`/doc/${uuid()}`} />
+      },
       {
         path: '/profile/:id',
         element: <MyProfile></MyProfile>,
@@ -97,12 +107,12 @@ const router = createBrowserRouter([
             path: 'template',
             element: <DashBoardTemplate></DashBoardTemplate>
           },
-          // {
-
-          // }
-
-        ]
-
+          // ... Other dashboard routes ...
+        ],
+      },
+      {
+        path: 'template',
+        element: <DashBoardTemplate></DashBoardTemplate>
       },
       {
         path: '/editor',
@@ -111,8 +121,7 @@ const router = createBrowserRouter([
       {
         path: "/updateProfile/:id",
         element: <UpdateProfile></UpdateProfile>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/users/${params.id}`)
+        loader: ({ params }) => fetch(`https://likho-backend.vercel.app/users/${params.id}`)
       },
       {
         path: "/chat",
@@ -152,6 +161,44 @@ const router = createBrowserRouter([
         element: <TemplatesDetails></TemplatesDetails>
       }
     ]
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: 'newDoc',
+        element: <Drags></Drags>
+      },
+      {
+        path: 'inbox',
+        element: <DashBoardInbox></DashBoardInbox>
+      },
+
+      {
+        path: 'sent',
+        element: <DashBoardSent></DashBoardSent>
+      },
+      {
+        path: 'document',
+        element: <DashDocument></DashDocument>
+      },
+      {
+        path: 'sent',
+        element: <DashBoardSent></DashBoardSent>
+      },
+      {
+        path: 'setting',
+        element: <UpdateProfile></UpdateProfile>
+      },
+      {
+        path: 'template',
+        element: <DashBoardTemplate></DashBoardTemplate>
+      }
+
+
+    ]
+
   },
 ]);
 

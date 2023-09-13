@@ -10,7 +10,7 @@ import NotesText from "../pages/NotesText/NotesText";
 import ReadSection from "../pages/ReadSection/ReadSection";
 import ChatContainer from "../pages/RealTimeChatInfo/ChatContainer";
 import TemplateSection from "../pages/Template/TemplateSection";
-import ResumeEditor from "../pages/TemplateProduce/TemplateProduce";
+
 
 
 
