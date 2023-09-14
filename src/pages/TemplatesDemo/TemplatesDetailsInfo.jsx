@@ -61,6 +61,7 @@ const TemplatesDetailsInfo = ({ templateInfo }) => {
                                 Real-Time Collaboration
                             </Tab>
                             {/* Add more tabs here if needed */}
+                            {/*   Up */}
                         </TabList>
                     </div>
                     
