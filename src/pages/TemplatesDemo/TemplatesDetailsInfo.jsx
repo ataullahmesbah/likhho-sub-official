@@ -64,6 +64,8 @@ const TemplatesDetailsInfo = ({ templateInfo }) => {
                             {/*   Up */}
                         </TabList>
                     </div>
+
+                    {/* sub */}
                     
                     <p className="border-b-4"></p>
                     <TabPanel>
