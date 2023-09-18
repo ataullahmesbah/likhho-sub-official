@@ -1,0 +1,12 @@
+h1 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 5px;
+  }
+
+  .container {
+    gap: 7px;
+    margin-bottom: 5px;
+  }
